@@ -38,5 +38,18 @@
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-order": "^2.0.0"
-  }
+  },
+  "scripts": {
+      "precommit": "lint-staged"
+    },
+    "lint-staged": {
+      "src/**/*.{js,json}": [
+          "eslint --fix", "git add"
+      ],
+      "src/**/*.{css,scss}": [
+          "stylelint --fix", "git add"
+      ]
+    }
 }
+
+
