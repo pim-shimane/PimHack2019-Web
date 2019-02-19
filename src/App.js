@@ -1,7 +1,7 @@
- import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import Top from './containers/top.jsx';
+import Top from "./containers/top.jsx";
 
 class App extends Component {
   render() {

@@ -44,10 +44,7 @@
     },
     "lint-staged": {
       "src/App.js": [
-          "eslint --fix", "git add"
-      ],
-      "src/App.css": [
-          "stylelint --fix", "git add"
+          "prettier --write", "git add"
       ]
     }
 }
