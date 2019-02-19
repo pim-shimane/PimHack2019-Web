@@ -40,16 +40,12 @@
     "stylelint-order": "^2.0.0"
   },
   "scripts": {
-      "precommit": "lint-staged"
-    },
-    "lint-staged": {
-      "src/App.js": [
-          "prettier --write", "git add"
-      ],
-      "src/App.css": [
-          "prettier --write", "git add"
-            ]
-    }
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
-
-
