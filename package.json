@@ -43,10 +43,10 @@
       "precommit": "lint-staged"
     },
     "lint-staged": {
-      "src/**/*.{js,json}": [
+      "src/App.js": [
           "eslint --fix", "git add"
       ],
-      "src/**/*.{css,scss}": [
+      "src/App.css": [
           "stylelint --fix", "git add"
       ]
     }
