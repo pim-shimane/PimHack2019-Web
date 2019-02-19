@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 
 // ここにcomponentをインポート
 import Hello from '../components/hello.jsx'
+import Upload from '../components/uploadcomponents.jsx'
+
+
 
 class TopScreen extends Component {
   constructor (props) {
@@ -13,6 +16,7 @@ class TopScreen extends Component {
       <div className="main-padding-menu">
         <Hello />
         {this.props.num}
+        <Upload />
       </div>
     );
   }
@@ -23,3 +27,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(TopScreen);
+
+export default TopScreen;
