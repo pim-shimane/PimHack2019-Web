@@ -13,13 +13,15 @@ class TopScreen extends Component {
       <div className="main-padding-menu">
         <Hello />
         {this.props.num}
+        {this.props.english}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  num: state.credit.num
+  num: state.lesson.num,
+  english: state.courseCredit.english
 });
 
 export default connect(mapStateToProps)(TopScreen);

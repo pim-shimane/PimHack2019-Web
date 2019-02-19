@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import credit from './creditReducer.js';
+import lesson from './lessonReducer.js';
+import courseCredit from './courseCreditReducer.js';
 
 const reducer = combineReducers({
-    credit
+    lesson,
+    courseCredit
 });
 
 export default reducer;
