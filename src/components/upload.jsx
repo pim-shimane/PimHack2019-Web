@@ -7,9 +7,7 @@ class UploadScreen extends Component {
     const tmp = text.split("\n");
 
     // tmpを一列ずつ読み込んで各行の中身をsplitする
-    let array = {
-      subject: []
-    };
+    let array = [];
     for(let i=0; i<tmp.length; i++){
       // 空行だったら処理をスキップ
       if(tmp[i] == "") continue;
@@ -24,10 +22,8 @@ class UploadScreen extends Component {
           addArray.push(line[j]);
         }
       }
-      array.subject.push(addArray);
+      array.push(addArray);
     }
-
-    console.log(array);
   }
 
   loadFile(e){
