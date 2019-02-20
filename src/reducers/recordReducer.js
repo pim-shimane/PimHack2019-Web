@@ -1,3 +1,5 @@
+import { ADD_RECORD } from "../actions/recordAction.js";
+
 const initialState = {
   english: 0, //英語
   foreignLanguage: 0, //初修
@@ -18,12 +20,18 @@ const initialState = {
   freeSecond: 0, //自由選択Ⅱ
   surplusCredit: 0 //余剰単位
 };
+
+function splitRecord(state, record) {
+  let newState = state;
+  return newState;
+}
+
 // Reducer処理
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "Sample": {
+    case ADD_RECORD: {
       //後で変えて下さい。
-      return state;
+      return splitRecord(state, action.record);
     }
     default: {
       return state;

@@ -1,13 +1,20 @@
 import React, { Component } from "react";
-import Encoding from "encoding-japanese"
+import { connect } from "react-redux";
+import Encoding from "encoding-japanese";
 
-class UploadScreen extends Component {
+import { addRecord } from "../actions/recordAction.js";
+
+class Upload extends Component {
+  constructor (props) {
+    super(props);
+  }
+
   parseCSV(text){
     // 一行ごとに配列に分割
     const tmp = text.split("\n");
 
     // tmpを一列ずつ読み込んで各行の中身をsplitする
-    let array = [];
+    //let array = [];
     for(let i=0; i<tmp.length; i++){
       // 空行だったら処理をスキップ
       if(tmp[i] == "") continue;
@@ -16,13 +23,14 @@ class UploadScreen extends Component {
       const line = tmp[i].split(',');
       
       // 4番目の要素以降をとりだす
-      let addArray = [];
-      for(let j=0; j<line.length; j++){
-        if(j >= 4){
-          addArray.push(line[j]);
-        }
+      let record = [];
+      for(let j=4; j<line.length; j++){
+        record.push(line[j]);
       }
-      array.push(addArray);
+
+      if(record[8]=="合"){
+        this.props.addRecord(record);
+      }
     }
   }
 
@@ -57,4 +65,14 @@ class UploadScreen extends Component {
   }
 }
 
-export default UploadScreen;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addRecord(record){
+      dispatch(addRecord(record));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Upload);
