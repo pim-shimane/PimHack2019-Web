@@ -5,7 +5,7 @@ export default {
   informationScience: 2, //情報科学
   social: 4, //人文社会科学
   science: 4, //自然科学
-  educationOthers: 0, //教養育成その他
+  educationOthers: 6, //教養育成その他
   freeFirst: 10, //自由選択Ⅰ
   specialFundamental: 12, //専門基礎
   specialCompulsory: 62, //専門必修
