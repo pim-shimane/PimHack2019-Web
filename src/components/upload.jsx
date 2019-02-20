@@ -29,7 +29,7 @@ class Upload extends Component {
       }
 
       if(record[8]=="合"){
-        this.props.addRecord(record);
+        this.props.addRecord(record, this.props.needCredit);
       }
     }
   }
@@ -65,12 +65,14 @@ class Upload extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  needCredit: state.course.needCredit
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRecord(record){
-      dispatch(addRecord(record));
+    addRecord(record, needCredit){
+      dispatch(addRecord(record, needCredit));
     }
   }
 }

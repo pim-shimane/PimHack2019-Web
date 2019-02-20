@@ -1,8 +1,9 @@
 export const ADD_RECORD = "ADD_RECORD";
 
-export function addRecord(record) {
+export function addRecord(record, needCredit) {
   return {
     type: ADD_RECORD,
-    record: record
+    record: record,
+    needCredit: needCredit
   };
 }

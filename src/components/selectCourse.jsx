@@ -39,7 +39,7 @@ class SelectCourse extends Component {
 }
  
 const mapStateToProps = state => ({
-  course: state.course.course,
+  course: state.course.course
 });
 
 const mapDispatchToProps = (dispatch) => {

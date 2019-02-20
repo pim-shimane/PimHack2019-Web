@@ -21,7 +21,8 @@ const initialState = {
   surplusCredit: 0 //余剰単位
 };
 
-function splitRecord(state, record) {
+function splitRecord(state, record, needCredit) {
+  console.log(needCredit);
   let newState = state;
   return newState;
 }
@@ -31,7 +32,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_RECORD: {
       //後で変えて下さい。
-      return splitRecord(state, action.record);
+      return splitRecord(state, action.record, action.needCredit);
     }
     default: {
       return state;
