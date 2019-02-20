@@ -7,10 +7,18 @@ import { informationEngineering } from "../reducers/courseReducer.js";
 import { inteligenceInformationDesign } from "../reducers/courseReducer.js"; 
 import { machineElectronics } from "../reducers/courseReducer.js"; 
 import { changeCourse } from "../actions/courseAction.js";
+import informationSystemCredit from "../courses/informationSystem.js";
+import informationEngineeringCredit from "../courses/informationEngineering.js";
+import inteligenceInformationDesignCredit from "../courses/intelligenceInformationDesign.js";
+import machineElectronicsCredit from "../courses/machineElectronics.js";
 
 class SelectCourse extends Component {
   constructor (props) {
     super(props);
+  }
+
+  SelectCourse(course, needCredit) {
+    this.props.changeCourse(course, needCredit);
   }
 
   render() {
@@ -20,10 +28,10 @@ class SelectCourse extends Component {
           {this.props.course}
         </MDBDropdownToggle>
         <MDBDropdownMenu basic>
-          <MDBDropdownItem onClick={() => this.props.changeCourse(informationSystem)}>{informationSystem}</MDBDropdownItem>
-          <MDBDropdownItem onClick={() => this.props.changeCourse(informationEngineering)}>{informationEngineering}</MDBDropdownItem>
-          <MDBDropdownItem onClick={() => this.props.changeCourse(inteligenceInformationDesign)}>{inteligenceInformationDesign}</MDBDropdownItem>
-          <MDBDropdownItem onClick={() => this.props.changeCourse(machineElectronics)}>{machineElectronics}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.props.changeCourse(informationSystem, informationSystemCredit)}>{informationSystem}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.props.changeCourse(informationEngineering, informationEngineeringCredit)}>{informationEngineering}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.props.changeCourse(inteligenceInformationDesign, inteligenceInformationDesignCredit)}>{inteligenceInformationDesign}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.props.changeCourse(machineElectronics, machineElectronicsCredit)}>{machineElectronics}</MDBDropdownItem>
        </MDBDropdownMenu>
       </MDBDropdown>
     );
@@ -31,13 +39,13 @@ class SelectCourse extends Component {
 }
  
 const mapStateToProps = state => ({
-  course: state.course.course
+  course: state.course.course,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeCourse(course){
-      dispatch(changeCourse(course));
+    changeCourse(course, needCredit){
+      dispatch(changeCourse(course, needCredit));
     }
   }
 }

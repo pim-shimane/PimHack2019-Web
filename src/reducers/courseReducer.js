@@ -6,13 +6,17 @@ const inteligenceInformationDesign = "知能情報デザイン学科";
 const machineElectronics = "機械・電気電子工学科";
 
 const initialState = {
-  course: "学科選択"
+  course: "学科選択",
+  needCredit: {}
 };
 // Reducer処理
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_COURSE: {
-      return { course: action.course };
+      return {
+        course: action.course,
+        needCredit: action.needCredit
+      };
     }
     default: {
       return state;
