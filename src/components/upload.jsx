@@ -16,13 +16,6 @@ class UploadScreen extends Component {
 
       // カンマで分割
       const line = tmp[i].split(',');
-
-      // 最初の行には氏名や学年が入っているのでそれを取り出す
-      if(i == 0){
-        array["studentNumber"] = line[1];
-        array["studentName"] = line[2];
-        array["studentGrade"] = line[3];
-      }
       
       // 4番目の要素以降をとりだす
       let addArray = [];
