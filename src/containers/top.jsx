@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 // ここにcomponentをインポート
 import Hello from '../components/hello.jsx'
+import Upload from '../components/upload.jsx'
 
 class TopScreen extends Component {
   constructor (props) {
@@ -14,6 +15,7 @@ class TopScreen extends Component {
         <Hello />
         {this.props.num}
         {this.props.english}
+        <Upload />
       </div>
     );
   }
