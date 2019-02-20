@@ -11,13 +11,12 @@ class HelloScreen extends Component {
   render() {
     return (
       <div>
-        <h5>Hello World</h5>
+        <h5>{this.props.english}</h5>
       </div>
     );
   }
 }
 const mapStateToProps = state => ({
-  num: state.lesson.num,
   english: state.courseCredit.english
 });
 
