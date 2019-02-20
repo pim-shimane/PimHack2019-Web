@@ -11,9 +11,7 @@ class HelloScreen extends Component {
   render() {
     return (
       <div>
-        <h5>Hello</h5>
-        <h5>{this.props.num}</h5>
-        <h5>{this.props.english}</h5>
+        <h5>Hello World</h5>
       </div>
     );
   }
