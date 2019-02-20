@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 // ここにcomponentをインポート
-import Hello from '../components/hello.jsx'
+import Hello from '../components/hello.jsx';
+import SelectCourse from '../components/selectCourse.jsx';
 
 class TopScreen extends Component {
   constructor (props) {
@@ -11,9 +12,7 @@ class TopScreen extends Component {
   render() {
     return (
       <div className="main-padding-menu">
-        <Hello />
-        {this.props.num}
-        {this.props.english}
+        <SelectCourse />
       </div>
     );
   }
