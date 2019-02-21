@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:11
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: 'Run Prettier'
+          command: 'yarn -s format -l'
