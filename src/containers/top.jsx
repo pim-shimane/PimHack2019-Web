@@ -12,7 +12,6 @@ import SelectCourse from '../components/selectCourse.jsx';
 
 class TopScreen extends Component {
   render() {
-    console.log(this.props.isSelected)
     return (
       <div className="main-padding-menu">
         <Header />
