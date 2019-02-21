@@ -5,6 +5,14 @@ class Sheet extends Component {
     var hoge = [];
     hoge = ["hoge", "biz"];
     return (
+      <div>
+      <div className="container done-space">
+      <div className="row">
+        <div className="col-md-12">
+          <h1 className="display-3  text-center">あと？単位足りません。</h1>
+        </div>
+      </div>
+    </div>
       <div className="py-5">
         <div className="container">
           <div className="row">
@@ -65,6 +73,7 @@ class Sheet extends Component {
             </div>
           </div>
       </div>
+    </div>
     </div>
     );
   }
