@@ -27,8 +27,8 @@ class Upload extends Component {
 
       records.push(record);
     }
-    this.props.registerRecords(records);
     this.props.splitCredit(records, this.props.needCredit);
+    this.props.registerRecords(records);
   }
 
   loadFile(e){

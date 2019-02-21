@@ -245,6 +245,7 @@ function splitCredit(state, records, needCredit) {
       newState = splitCreditWithRecord(newState, record, needCredit);
     }
   }
+  console.log(newState.isSelected);
   return newState;
 }
 
