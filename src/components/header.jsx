@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-md navbar-dark bg-light mb-3">
         <div className="container">
-          <a href="https://pim-shimane.com/"><img src={Icon} height="40px"></img></a>
+          <a href="https://pim-shimane.com/"><img src={Icon} height="40px" alt=""></img></a>
         </div>
       </nav>
     );

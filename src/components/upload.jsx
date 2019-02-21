@@ -14,7 +14,7 @@ class Upload extends Component {
     let records = [];
     for(let i=0; i<tmp.length; i++){
       // 空行だったら処理をスキップ
-      if(tmp[i] == "") continue;
+      if(tmp[i] === "") continue;
 
       // カンマで分割
       const line = tmp[i].split(',');

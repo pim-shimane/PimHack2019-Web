@@ -7,15 +7,33 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: npm-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run:
-          name: Run format
-          command: npm run format -l
-      - run:
-          name: Run test
-          command: npm run test
+          key: npm-{{ checksum "package.json" }}
+      - run: npm run format -l
+      - run: npm run test
+  deploy:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:11
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-{{ checksum "package.json" }}
+      - run: npm install
+      - run: npm run build
+      - run: npm run deploy
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 class Sheet extends Component {
   render() {
-    var hoge = [];
-    hoge = ["hoge", "biz"];
     return (
       <div>
       <div className="container done-space">
