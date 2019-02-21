@@ -1,18 +1,17 @@
 {
   "main.css": "/PimHack2019-Web/static/css/main.7654273d.chunk.css",
-  "main.js": "/PimHack2019-Web/static/js/main.ef411828.chunk.js",
-  "main.js.map": "/PimHack2019-Web/static/js/main.ef411828.chunk.js.map",
+  "main.js": "/PimHack2019-Web/static/js/main.57e3594c.chunk.js",
+  "main.js.map": "/PimHack2019-Web/static/js/main.57e3594c.chunk.js.map",
   "runtime~main.js": "/PimHack2019-Web/static/js/runtime~main.d5702e2d.js",
   "runtime~main.js.map": "/PimHack2019-Web/static/js/runtime~main.d5702e2d.js.map",
   "static/css/2.7e485b40.chunk.css": "/PimHack2019-Web/static/css/2.7e485b40.chunk.css",
-  "static/js/2.1b61283e.chunk.js": "/PimHack2019-Web/static/js/2.1b61283e.chunk.js",
-  "static/js/2.1b61283e.chunk.js.map": "/PimHack2019-Web/static/js/2.1b61283e.chunk.js.map",
+  "static/js/2.66a2b79b.chunk.js": "/PimHack2019-Web/static/js/2.66a2b79b.chunk.js",
+  "static/js/2.66a2b79b.chunk.js.map": "/PimHack2019-Web/static/js/2.66a2b79b.chunk.js.map",
   "index.html": "/PimHack2019-Web/index.html",
-  "precache-manifest.de50a9705fc3b7a5b100d174a7f2b7b4.js": "/PimHack2019-Web/precache-manifest.de50a9705fc3b7a5b100d174a7f2b7b4.js",
+  "precache-manifest.499aadd6028ec1d80db9a86d47bd8382.js": "/PimHack2019-Web/precache-manifest.499aadd6028ec1d80db9a86d47bd8382.js",
   "service-worker.js": "/PimHack2019-Web/service-worker.js",
   "static/css/2.7e485b40.chunk.css.map": "/PimHack2019-Web/static/css/2.7e485b40.chunk.css.map",
   "static/css/main.7654273d.chunk.css.map": "/PimHack2019-Web/static/css/main.7654273d.chunk.css.map",
   "static/media/mdb.css": "/PimHack2019-Web/static/media/arrow_right.8ef6a08c.svg",
-  "static/media/all.min.css": "/PimHack2019-Web/static/media/fa-solid-900.b70cea03.ttf",
-  "static/media/pimlogo.png": "/PimHack2019-Web/static/media/pimlogo.382f2938.png"
+  "static/media/all.min.css": "/PimHack2019-Web/static/media/fa-solid-900.b70cea03.ttf"
 }
