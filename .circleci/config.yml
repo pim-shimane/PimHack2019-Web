@@ -8,11 +8,11 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn
+      - run: npm install
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run:
           name: 'Run Prettier'
-          command: 'yarn -s format -l'
+          command: 'npm run format -l'
