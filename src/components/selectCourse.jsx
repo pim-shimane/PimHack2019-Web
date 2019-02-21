@@ -21,7 +21,7 @@ class SelectCourse extends Component {
 
   render() {
     return (
-      <MDBDropdown>
+      <MDBDropdown className="bottom-space">
         <MDBDropdownToggle caret color="primary">
           {this.props.course}
         </MDBDropdownToggle>

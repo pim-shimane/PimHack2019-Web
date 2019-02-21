@@ -8706,3 +8706,7 @@ form {
 .done-space {
   margin-top: 20rem !important;
 }
+
+.bottom-space {
+  margin-bottom: 10rem;
+}
