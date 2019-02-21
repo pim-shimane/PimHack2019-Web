@@ -42,98 +42,58 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
 
   //英語
   if (record[2] === "英語") {
-    state.english = state.english + Number(record[4]);
-    state.englishLesson.push(record[3]);
-    if (state.english > needCredit.english) {
-      free1 = Number(state.freeFirst);
-      free1 += i - needCredit.english;
-      state.english = needCredit.english;
-      state.freeFirst = String(free1);
+    if (state.english + Number(record[4]) <= needCredit.english) {
+      state.english += Number(record[4]);
+      state.englishLesson.push(record[3]);
     }
   }
 
   //初修
   if (record[1] === "外国語科目" && record[2] !== "英語") {
-    state.foreignLanguage = state.foreignLanguage + Number(record[4]);
-    if (state.foreignLanguage > needCredit.foreignLanguage) {
-      free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.foreignLanguage);
-      state.foreignLanguage = needCredit.foreignLanguage;
-      state.freeFirst = String(free1);
+    if (
+      state.foreignLanguage + Number(record[4]) <=
+      needCredit.foreignLanguage
+    ) {
+      stete.foreignLanguage += Number(record[4]);
+      state.foreignLanguageLesson.push(record[3]);
     }
   }
 
   //健康文化
   if (record[1] === "健康スポーツ" || record[1] === "文化芸術") {
-    i = Number(state.artCulture);
-    i += Number(record[4]);
-    state.artCulture = String(i);
-    if (i > Number(needCredit.artCulture)) {
-      free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.artCulture);
-      state.artCulture = needCredit.artCulture;
-      state.freeFirst = String(free1);
+    if (state.artCulture + Number(record[4]) <= needCredit.artCulture) {
+      stete.artCulture += Number(record[4]);
+      stete.artCultureLesson.push(record[3]);
     }
   }
 
   //情報科学
   if (record[1] === "情報科学") {
-    i = Number(state.informationScience);
-    i += Number(record[4]);
-    state.informationScience = String(i);
-    if (i > Number(needCredit.informationScience)) {
-      free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.informationScience);
-      state.informationScience = needCredit.informationScience;
-      state.freeFirst = String(free1);
+    if (
+      state.informationScience + Number(record[4]) <=
+      needCredit.informationScience
+    ) {
+      stete.informationScience += Number(record[4]);
+      stete.informationScienceLesson.push(record[3]);
     }
   }
 
   //人文社会科学
   if (record[2] === "人文社会科学") {
-    i = Number(state.social);
-    i += Number(record[4]);
-    state.social = String(i);
-    if (i > Number(needCredit.social)) {
-      educate = Number(state.educationOthers);
-      educate += i - Number(needCredit.social);
-      state.social = needCredit.social;
-      state.educationOthers = String(educate);
-      if (educate > Number(needCredit.educationOthers)) {
-        free1 = Number(state.freeFirst);
-        free1 += educate - Number(needCredit.educationOthers);
-        state.educationOthers = needCredit.educationOthers;
-        state.freeFirst = String(free1);
-      }
+    if (state.sorcial + Number(record[4]) <= needCredit.sorcial) {
+      stete.sorcial += Number(record[4]);
+      stete.informationScienceLesson.push(record[3]);
     }
   }
 
   //自然科学
   if (record[2] === "自然科学") {
-    i = Number(state.science);
-    i += Number(record[4]);
-    state.science = String(i);
-    if (i > Number(needCredit.science)) {
-      educate = Number(state.educationOthers);
-      educate += i - Number(needCredit.science);
-      state.science = needCredit.science;
-      state.educationOthers = String(educate);
-      if (educate > Number(needCredit.educationOthers)) {
-        free1 = Number(state.freeFirst);
-        free1 += educate - Number(needCredit.educationOthers);
-        state.educationOthers = needCredit.educationOthers;
-        state.freeFirst = String(free1);
-      }
+    if (state.science + Number(record[4]) <= needCredit.science) {
+      stete.science += Number(record[4]);
+      stete.sciencLesson.push(record[3]);
     }
   }
 
-  //自由選択I
-  if (Number(state.freeFirst) > Number(needCredit.freeFirst)) {
-    free2 = Number(state.freeSecond);
-    free2 += Number(state.freeFirst) - Number(needCredit.freeFirst);
-    state.freeFirst = needCredit.freeFirst;
-    state.freeSecond = String(free2);
-  }
   return state;
 }
 
