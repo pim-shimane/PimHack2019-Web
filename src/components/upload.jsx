@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Encoding from "encoding-japanese";
 
-import { addRecord } from "../actions/recordAction.js";
+import { splitCredit } from "../actions/creditAction.js";
+import { registerRecords } from "../actions/recordAction.js";
 
 class Upload extends Component {
   constructor (props) {
@@ -14,26 +15,24 @@ class Upload extends Component {
     const tmp = text.split("\n");
 
     // tmpを一列ずつ読み込んで各行の中身をsplitする
-    //let array = [];
+    let records = [];
     for(let i=0; i<tmp.length; i++){
       // 空行だったら処理をスキップ
       if(tmp[i] == "") continue;
 
       // カンマで分割
       const line = tmp[i].split(',');
-      
+
       // 4番目の要素以降をとりだす
       let record = [];
       for(let j=4; j<line.length; j++){
         record.push(line[j]);
       }
-      
-      if(record[8]==="合" && this.props.needCredit!==""){
-        this.props.addRecord(record, this.props.needCredit);
-        //needCredit が空の時は実行しない
-        console.log(this.props.needCredit);
-      }
+
+      records.push(record);
     }
+    this.props.registerRecords(records);
+    this.props.splitCredit(records, this.props.needCredit);
   }
 
   loadFile(e){
@@ -73,8 +72,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRecord(record, needCredit){
-      dispatch(addRecord(record, needCredit));
+    splitCredit(records, needCredit){
+      dispatch(splitCredit(records, needCredit));
+    },
+    registerRecords(records){
+      dispatch(registerRecords(records));
     }
   }
 }

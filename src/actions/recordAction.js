@@ -1,9 +1,9 @@
-export const ADD_RECORD = "ADD_RECORD";
+export const REGISTER_RECORD = "REGISTER_RECORD";
 
-export function addRecord(record, needCredit) {
+export function registerRecords(records) {
+  console.log(records);
   return {
-    type: ADD_RECORD,
-    record: record,
-    needCredit: needCredit
+    type: REGISTER_RECORD,
+    records: records
   };
 }
