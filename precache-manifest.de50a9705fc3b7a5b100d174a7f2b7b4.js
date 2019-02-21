@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/fa-solid-900.82905d8d.svg"
   },
   {
-    "revision": "8ef6a08cdc1154920165680a4edde771",
-    "url": "/PimHack2019-Web/static/media/arrow_right.8ef6a08c.svg"
-  },
-  {
     "revision": "11911410dca2de148f30954eb2fd5eab",
     "url": "/PimHack2019-Web/static/media/arrow_left.11911410.svg"
+  },
+  {
+    "revision": "8ef6a08cdc1154920165680a4edde771",
+    "url": "/PimHack2019-Web/static/media/arrow_right.8ef6a08c.svg"
   },
   {
     "revision": "dfe56a876d0282555d1e2458e278060f",
@@ -172,7 +172,7 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/Roboto-Bold.e31fcf18.ttf"
   },
   {
-    "revision": "69a2193aa743c8fd3d4c841a006c6e2a",
+    "revision": "19a63a7abf957b0f087fc5c356388e20",
     "url": "/PimHack2019-Web/index.html"
   }
 ];
