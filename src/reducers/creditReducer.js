@@ -49,13 +49,13 @@ function splitCreditWithRecord(state, record, needCredit) {
 
   //初修
   if (record[1] === "外国語科目" && record[2] !== "英語") {
-    i = Number(state.foreignLanguag);
+    i = Number(state.foreignLanguage);
     i += Number(record[4]);
-    state.foreignLanguag = String(i);
-    if (i > Number(needCredit.foreignLanguag)) {
+    state.foreignLanguage = String(i);
+    if (i > Number(needCredit.foreignLanguage)) {
       free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.foreignLanguag);
-      state.foreignLanguag = needCredit.foreignLanguag;
+      free1 += i - Number(needCredit.foreignLanguage);
+      state.foreignLanguage = needCredit.foreignLanguage;
       state.freeFirst = String(free1);
     }
   }
@@ -231,21 +231,18 @@ function splitCreditWithRecord(state, record, needCredit) {
     state.freeFirst = needCredit.freeFirst;
     state.freeSecond = String(free2);
   }
-  console.log(state);
   return state;
 }
 
 function splitCredit(state, records, needCredit) {
   //コース選択していない場合、そのままstateを返します。
   if (needCredit === "") return state;
-  console.log(records);
   let newState = initialState;
   for (const record of records) {
     if (record[8] === "合") {
       newState = splitCreditWithRecord(newState, record, needCredit);
     }
   }
-  console.log(newState);
   return newState;
 }
 
