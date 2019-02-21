@@ -13,10 +13,6 @@ import informationEngineeringCredit from "../courses/informationEngineering.js";
 import machineElectronicsCredit from "../courses/machineElectronics.js";
 
 class SelectCourse extends Component {
-  constructor (props) {
-    super(props);
-  }
-
   // 学科コースの変更と成績の分割を行います
   SelectCourse(course, needCredit) {
     this.props.changeCourse(course, needCredit);

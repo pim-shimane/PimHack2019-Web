@@ -6,10 +6,6 @@ import { splitCredit } from "../actions/creditAction.js";
 import { registerRecords } from "../actions/recordAction.js";
 
 class Upload extends Component {
-  constructor (props) {
-    super(props);
-  }
-
   parseCSV(text){
     // 一行ごとに配列に分割
     const tmp = text.split("\n");
