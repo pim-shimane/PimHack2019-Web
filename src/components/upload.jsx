@@ -27,9 +27,11 @@ class Upload extends Component {
       for(let j=4; j<line.length; j++){
         record.push(line[j]);
       }
-
-      if(record[8]=="合"){
+      
+      if(record[8]==="合" && this.props.needCredit!==""){
         this.props.addRecord(record, this.props.needCredit);
+        //needCredit が空の時は実行しない
+        console.log(this.props.needCredit);
       }
     }
   }

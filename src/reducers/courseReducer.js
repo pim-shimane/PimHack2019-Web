@@ -7,7 +7,7 @@ const machineElectronics = "機械・電気電子工学科";
 
 const initialState = {
   course: "学科選択",
-  needCredit: {}
+  needCredit: ""
 };
 // Reducer処理
 const reducer = (state = initialState, action) => {
