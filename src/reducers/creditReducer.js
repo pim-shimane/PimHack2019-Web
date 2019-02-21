@@ -16,8 +16,6 @@ const initialState = {
   scienceLesson: [],
   educationOthers: 0, //教養その他
   educationOthersLesson: [],
-  socialTrain: 0, //社会人力養成
-  socialTrainLesson: [],
   freeFirst: 0, //自由選択Ⅰ
   freeFirstLesson: [],
   specialFundamental: 0, //専門基礎
@@ -59,9 +57,20 @@ function addFreeSecondOrSurplus(state, record, needCredit) {
   return state;
 }
 
+// その他の教養育成科目を管理します。
+function addEducationOthers(state, record, needCredit) {
+  if (state.educationOthers + Number(record[4]) <= needCredit.educationOthers) {
+    state.educationOthers += Number(record[4]);
+    state.educationOthersLesson.push(record[3]);
+  } else {
+    state = addFree(state, record, needCredit);
+  }
+
+  return state;
+}
+
 function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   //英語
-
   if (record[2] === "英語") {
     if (state.english + Number(record[4]) <= needCredit.english) {
       state.english += Number(record[4]);
@@ -88,6 +97,8 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
     if (state.artCulture + Number(record[4]) <= needCredit.artCulture) {
       state.artCulture += Number(record[4]);
       state.artCultureLesson.push(record[3]);
+    } else {
+      state = addFree(state, record, needCredit);
     }
   }
 
@@ -99,23 +110,48 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
     ) {
       state.informationScience += Number(record[4]);
       state.informationScienceLesson.push(record[3]);
+    } else {
+      state = addFree(state, record, needCredit);
     }
   }
 
-  //人文社会科学
-  if (record[2] === "人文社会科学") {
-    if (state.sorcial + Number(record[4]) <= needCredit.sorcial) {
-      state.sorcial += Number(record[4]);
-      state.informationScienceLesson.push(record[3]);
+  if (record[0] === "教養育成科目") {
+    //人文社会科学
+    if (record[2] === "人文社会科学") {
+      if (state.social + Number(record[4]) <= needCredit.social) {
+        state.social += Number(record[4]);
+        state.socialLesson.push(record[3]);
+      } else {
+        state = addEducationOthers(state, record, needCredit);
+      }
+    } else if (record[2] === "自然科学") {
+      if (state.science + Number(record[4]) <= needCredit.science) {
+        state.science += Number(record[4]);
+        state.scienceLesson.push(record[3]);
+      } else {
+        state = addEducationOthers(state, record, needCredit);
+      }
+    } else {
+      state = addEducationOthers(state, record, needCredit);
     }
   }
 
-  //自然科学
-  if (record[2] === "自然科学") {
-    if (state.science + Number(record[4]) <= needCredit.science) {
-      state.science += Number(record[4]);
-      state.scienceLesson.push(record[3]);
+  if (record[0] === "専門教育科目") {
+    if (record[1] === "専門基礎科目") {
+      if (
+        state.specialFundamental + Number(record[4]) <=
+        needCredit.specialFundamental
+      ) {
+        state.specialFundamental += Number(record[4]);
+        state.specialFundamentalLesson.push(record[3]);
+      } else {
+        state = addFreeSecondOrSurplus(state, record, needCredit);
+      }
+    } else if (expartRequired.includes(record[3])) {
+      state.specialCompulsory += Number(record[4]);
+      state.specialCompulsoryLesson.push(record[3]);
     }
+    // TODO 専門選択と専門自由の分割
   }
 
   return state;
@@ -137,7 +173,6 @@ function splitCredit(state, records, needCredit, expartRequired) {
     }
   }
 
-  console.log(newState);
   return newState;
 }
 
