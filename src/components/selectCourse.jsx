@@ -10,12 +10,14 @@ import { informationEngineering } from "../reducers/courseReducer.js";
 import { machineElectronics } from "../reducers/courseReducer.js";
 import informationSystemCredit from "../courses/informationSystem.js";
 import informationEngineeringCredit from "../courses/informationEngineering.js";
-import machineElectronicsCredit from "../courses/machineElectronics.js";
+import machineElectronicsCredit, { machineElectoronicsRequired } from "../courses/machineElectronics.js";
+import { informationEngineeringRequired } from "../courses/informationEngineering.js";
+import { informationSystemRequired } from "../courses/informationSystem.js";
 
 class SelectCourse extends Component {
   // 学科コースの変更と成績の分割を行います
-  SelectCourse(course, needCredit) {
-    this.props.changeCourse(course, needCredit);
+  SelectCourse(course, needCredit, expartRequired) {
+    this.props.changeCourse(course, needCredit, expartRequired);
     this.props.splitCredit(this.props.records, needCredit);
   }
 
@@ -26,9 +28,9 @@ class SelectCourse extends Component {
           {this.props.course}
         </MDBDropdownToggle>
         <MDBDropdownMenu basic>
-          <MDBDropdownItem onClick={() => this.SelectCourse(informationSystem, informationSystemCredit)}>{informationSystem}</MDBDropdownItem>
-          <MDBDropdownItem onClick={() => this.SelectCourse(informationEngineering, informationEngineeringCredit)}>{informationEngineering}</MDBDropdownItem>
-          <MDBDropdownItem onClick={() => this.SelectCourse(machineElectronics, machineElectronicsCredit)}>{machineElectronics}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.SelectCourse(informationSystem, informationSystemCredit, informationSystemRequired)}>{informationSystem}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.SelectCourse(informationEngineering, informationEngineeringCredit, informationEngineeringRequired)}>{informationEngineering}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.SelectCourse(machineElectronics, machineElectronicsCredit, machineElectoronicsRequired)}>{machineElectronics}</MDBDropdownItem>
        </MDBDropdownMenu>
       </MDBDropdown>
     );
@@ -42,8 +44,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeCourse(course, needCredit){
-      dispatch(changeCourse(course, needCredit));
+    changeCourse(course, needCredit, expartRequired){
+      dispatch(changeCourse(course, needCredit, expartRequired));
     },
     splitCredit(records, needCredit){
       dispatch(splitCredit(records, needCredit));

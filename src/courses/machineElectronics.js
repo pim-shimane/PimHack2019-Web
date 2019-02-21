@@ -13,3 +13,14 @@ export default {
   specialFree: 4, //専門自由
   freeSecond: 6 //自由選択Ⅱ
 };
+
+export const machineElectoronicsRequired = [
+  "機械・電気電子工学実験ＩＡ",
+  "機械・電気電子工学実験ＩＢ",
+  "機械・電気電子工学実験ＩＩＡ",
+  "機械・電気電子工学実験ＩＩＢ",
+  "機械・電気電子工学実験ＩＩＩＡ",
+  "機械・電気電子工学実験ＩＩＩＢ",
+  "外書輪読",
+  "卒業研究"
+];
