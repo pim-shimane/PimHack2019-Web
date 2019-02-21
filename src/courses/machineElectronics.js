@@ -1,17 +1,17 @@
 export default {
-  english: 4, //�p��
-  foreignLanguage: 4, //���C
-  artCulture: 2, //�|�p����
-  informationScience: 2, //���Ȋw
-  social: 4, //�l���Љ�Ȋw
-  science: 4, //���R�Ȋw
-  educationOthers: 6, //���{�琬���̑�
-  freeFirst: 4, //���R�I���T
-  specialFundamental: 18, //����b
-  specialCompulsory: 54, //���K�C
-  specialOptional: 12, //���I��
-  specialFree: 4, //��厩�R
-  freeSecond: 6 //���R�I���U
+  english: 4, //英語
+  foreignLanguage: 4, //初修
+  artCulture: 2, //芸術文化
+  informationScience: 2, //情報科学
+  social: 4, //人文社会科学
+  science: 4, //自然科学
+  educationOthers: 6, //教養育成その他
+  freeFirst: 4, //自由選択Ⅰ
+  specialFundamental: 18, //専門基礎
+  specialCompulsory: 54, //専門必修
+  specialOptional: 12, //専門選択
+  specialFree: 4, //専門自由
+  freeSecond: 6 //自由選択Ⅱ
 };
 
 export const machineElectoronicsRequired = [
