@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/fa-solid-900.61969d43.woff"
   },
   {
-    "revision": "c39278f7abfc798a241551194f55e29f",
-    "url": "/PimHack2019-Web/static/media/fa-brands-400.c39278f7.ttf"
-  },
-  {
     "revision": "d9d17590c975aad1be0ddab673f9c769",
     "url": "/PimHack2019-Web/static/media/fa-brands-400.d9d17590.eot"
+  },
+  {
+    "revision": "c39278f7abfc798a241551194f55e29f",
+    "url": "/PimHack2019-Web/static/media/fa-brands-400.c39278f7.ttf"
   },
   {
     "revision": "e7e957c87c454bccaa3bf9fdaa6874f8",
@@ -132,6 +132,10 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/Roboto-Bold.39b2c303.woff2"
   },
   {
+    "revision": "7500519de3d82e33d1587f8042e2afcb",
+    "url": "/PimHack2019-Web/static/media/Roboto-Thin.7500519d.woff"
+  },
+  {
     "revision": "3b813c2ae0d04909a33a18d792912ee7",
     "url": "/PimHack2019-Web/static/media/Roboto-Light.3b813c2a.woff"
   },
@@ -148,24 +152,20 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/Roboto-Bold.dc81817d.woff"
   },
   {
-    "revision": "7500519de3d82e33d1587f8042e2afcb",
-    "url": "/PimHack2019-Web/static/media/Roboto-Thin.7500519d.woff"
+    "revision": "df7b648ce5356ea1ebce435b3459fd60",
+    "url": "/PimHack2019-Web/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
     "revision": "94998475f6aea65f558494802416c1cf",
     "url": "/PimHack2019-Web/static/media/Roboto-Thin.94998475.ttf"
   },
   {
-    "revision": "46e48ce0628835f68a7369d0254e4283",
-    "url": "/PimHack2019-Web/static/media/Roboto-Light.46e48ce0.ttf"
-  },
-  {
-    "revision": "df7b648ce5356ea1ebce435b3459fd60",
-    "url": "/PimHack2019-Web/static/media/Roboto-Regular.df7b648c.ttf"
-  },
-  {
     "revision": "894a2ede85a483bf9bedefd4db45cdb9",
     "url": "/PimHack2019-Web/static/media/Roboto-Medium.894a2ede.ttf"
+  },
+  {
+    "revision": "46e48ce0628835f68a7369d0254e4283",
+    "url": "/PimHack2019-Web/static/media/Roboto-Light.46e48ce0.ttf"
   },
   {
     "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
