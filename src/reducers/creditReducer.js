@@ -55,6 +55,7 @@ function splitCreditWithRecord(state, record, needCredit) {
       needCredit.foreignLanguage
     ) {
       stete.foreignLanguage += Number(record[4]);
+      state.foreignLanguageLesson.push(record[3]);
     }
   }
 
@@ -62,6 +63,7 @@ function splitCreditWithRecord(state, record, needCredit) {
   if (record[1] === "健康スポーツ" || record[1] === "文化芸術") {
     if (state.artCulture + Number(record[4]) <= needCredit.artCulture) {
       stete.artCulture += Number(record[4]);
+      stete.artCultureLesson.push(record[3]);
     }
   }
 
@@ -72,6 +74,7 @@ function splitCreditWithRecord(state, record, needCredit) {
       needCredit.informationScience
     ) {
       stete.informationScience += Number(record[4]);
+      stete.informationScienceLesson.push(record[3]);
     }
   }
 
@@ -79,6 +82,7 @@ function splitCreditWithRecord(state, record, needCredit) {
   if (record[2] === "人文社会科学") {
     if (state.sorcial + Number(record[4]) <= needCredit.sorcial) {
       stete.sorcial += Number(record[4]);
+      stete.informationScienceLesson.push(record[3]);
     }
   }
 
@@ -86,10 +90,9 @@ function splitCreditWithRecord(state, record, needCredit) {
   if (record[2] === "自然科学") {
     if (state.science + Number(record[4]) <= needCredit.science) {
       stete.science += Number(record[4]);
+      stete.sciencLesson.push(record[3]);
     }
   }
-
-  //自由選択I
 
   return state;
 }
