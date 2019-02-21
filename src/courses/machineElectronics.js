@@ -1,15 +1,26 @@
 export default {
-  english: 4, //‰pŒê
-  foreignLanguage: 4, //‰C
-  artCulture: 2, //Œ|p•¶‰»
-  informationScience: 2, //î•ñ‰ÈŠw
-  social: 4, //l•¶Ğ‰ï‰ÈŠw
-  science: 4, //©‘R‰ÈŠw
-  educationOthers: 6, //‹³—{ˆç¬‚»‚Ì‘¼
-  freeFirst: 4, //©—R‘I‘ğ‡T
-  specialFundamental: 18, //ê–åŠî‘b
-  specialCompulsory: 54, //ê–å•KC
-  specialOptional: 12, //ê–å‘I‘ğ
-  specialFree: 4, //ê–å©—R
-  freeSecond: 6 //©—R‘I‘ğ‡U
+  english: 4, //ï¿½pï¿½ï¿½
+  foreignLanguage: 4, //ï¿½ï¿½ï¿½C
+  artCulture: 2, //ï¿½|ï¿½pï¿½ï¿½ï¿½ï¿½
+  informationScience: 2, //ï¿½ï¿½ï¿½ÈŠw
+  social: 4, //ï¿½lï¿½ï¿½ï¿½Ğ‰ï¿½ÈŠw
+  science: 4, //ï¿½ï¿½ï¿½Rï¿½ÈŠw
+  educationOthers: 6, //ï¿½ï¿½ï¿½{ï¿½ç¬ï¿½ï¿½ï¿½Ì‘ï¿½
+  freeFirst: 4, //ï¿½ï¿½ï¿½Rï¿½Iï¿½ï¿½ï¿½T
+  specialFundamental: 18, //ï¿½ï¿½ï¿½ï¿½b
+  specialCompulsory: 54, //ï¿½ï¿½ï¿½Kï¿½C
+  specialOptional: 12, //ï¿½ï¿½ï¿½Iï¿½ï¿½
+  specialFree: 4, //ï¿½ï¿½å©ï¿½R
+  freeSecond: 6 //ï¿½ï¿½ï¿½Rï¿½Iï¿½ï¿½ï¿½U
 };
+
+export const machineElectoronicsRequired = [
+  "æ©Ÿæ¢°ãƒ»é›»æ°—é›»å­å·¥å­¦å®Ÿé¨“ï¼©ï¼¡",
+  "æ©Ÿæ¢°ãƒ»é›»æ°—é›»å­å·¥å­¦å®Ÿé¨“ï¼©ï¼¢",
+  "æ©Ÿæ¢°ãƒ»é›»æ°—é›»å­å·¥å­¦å®Ÿé¨“ï¼©ï¼©ï¼¡",
+  "æ©Ÿæ¢°ãƒ»é›»æ°—é›»å­å·¥å­¦å®Ÿé¨“ï¼©ï¼©ï¼¢",
+  "æ©Ÿæ¢°ãƒ»é›»æ°—é›»å­å·¥å­¦å®Ÿé¨“ï¼©ï¼©ï¼©ï¼¡",
+  "æ©Ÿæ¢°ãƒ»é›»æ°—é›»å­å·¥å­¦å®Ÿé¨“ï¼©ï¼©ï¼©ï¼¢",
+  "å¤–æ›¸è¼ªèª­",
+  "å’æ¥­ç ”ç©¶"
+];
