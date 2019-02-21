@@ -1,10 +1,13 @@
 import { combineReducers } from "redux";
-import courseCredit from "./courseCreditReducer.js";
+
+import credit from "./creditReducer.js";
 import course from "./courseReducer.js";
+import record from "./recordReducer.js";
 
 const reducer = combineReducers({
+  credit,
   course,
-  courseCredit
+  record
 });
 
 export default reducer;

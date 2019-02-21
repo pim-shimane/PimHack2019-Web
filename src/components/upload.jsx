@@ -1,29 +1,34 @@
 import React, { Component } from "react";
-import Encoding from "encoding-japanese"
+import { connect } from "react-redux";
+import Encoding from "encoding-japanese";
 
-class UploadScreen extends Component {
+import { splitCredit } from "../actions/creditAction.js";
+import { registerRecords } from "../actions/recordAction.js";
+
+class Upload extends Component {
   parseCSV(text){
     // 一行ごとに配列に分割
     const tmp = text.split("\n");
 
     // tmpを一列ずつ読み込んで各行の中身をsplitする
-    let array = [];
+    let records = [];
     for(let i=0; i<tmp.length; i++){
       // 空行だったら処理をスキップ
       if(tmp[i] == "") continue;
 
       // カンマで分割
       const line = tmp[i].split(',');
-      
+
       // 4番目の要素以降をとりだす
-      let addArray = [];
-      for(let j=0; j<line.length; j++){
-        if(j >= 4){
-          addArray.push(line[j]);
-        }
+      let record = [];
+      for(let j=4; j<line.length; j++){
+        record.push(line[j]);
       }
-      array.push(addArray);
+
+      records.push(record);
     }
+    this.props.registerRecords(records);
+    this.props.splitCredit(records, this.props.needCredit);
   }
 
   loadFile(e){
@@ -56,4 +61,19 @@ class UploadScreen extends Component {
   }
 }
 
-export default UploadScreen;
+const mapStateToProps = state => ({
+  needCredit: state.course.needCredit
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    splitCredit(records, needCredit){
+      dispatch(splitCredit(records, needCredit));
+    },
+    registerRecords(records){
+      dispatch(registerRecords(records));
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Upload);
