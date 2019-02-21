@@ -35,11 +35,6 @@ const initialState = {
 };
 
 function splitCreditWithRecord(state, record, needCredit, expartRequired) {
-  var i = 0;
-  var free1 = 0;
-  var free2 = 0;
-  var educate = 0;
-
   //英語
   if (record[2] === "英語") {
     if (state.english + Number(record[4]) <= needCredit.english) {
@@ -54,7 +49,7 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
       state.foreignLanguage + Number(record[4]) <=
       needCredit.foreignLanguage
     ) {
-      stete.foreignLanguage += Number(record[4]);
+      state.foreignLanguage += Number(record[4]);
       state.foreignLanguageLesson.push(record[3]);
     }
   }
@@ -62,8 +57,8 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   //健康文化
   if (record[1] === "健康スポーツ" || record[1] === "文化芸術") {
     if (state.artCulture + Number(record[4]) <= needCredit.artCulture) {
-      stete.artCulture += Number(record[4]);
-      stete.artCultureLesson.push(record[3]);
+      state.artCulture += Number(record[4]);
+      state.artCultureLesson.push(record[3]);
     }
   }
 
@@ -73,24 +68,24 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
       state.informationScience + Number(record[4]) <=
       needCredit.informationScience
     ) {
-      stete.informationScience += Number(record[4]);
-      stete.informationScienceLesson.push(record[3]);
+      state.informationScience += Number(record[4]);
+      state.informationScienceLesson.push(record[3]);
     }
   }
 
   //人文社会科学
   if (record[2] === "人文社会科学") {
     if (state.sorcial + Number(record[4]) <= needCredit.sorcial) {
-      stete.sorcial += Number(record[4]);
-      stete.informationScienceLesson.push(record[3]);
+      state.sorcial += Number(record[4]);
+      state.informationScienceLesson.push(record[3]);
     }
   }
 
   //自然科学
   if (record[2] === "自然科学") {
     if (state.science + Number(record[4]) <= needCredit.science) {
-      stete.science += Number(record[4]);
-      stete.sciencLesson.push(record[3]);
+      state.science += Number(record[4]);
+      state.sciencLesson.push(record[3]);
     }
   }
 
