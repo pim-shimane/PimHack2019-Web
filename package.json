@@ -2,6 +2,7 @@
   "name": "check-credit",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pim-shimane.github.io/PimHack2019-Web/",
   "dependencies": {
     "encoding-japanese": "^1.0.29",
     "mdbreact": "^4.11.0",
@@ -17,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write src/*.{js,css}"
+    "format": "prettier --write src/*.{js,css}",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.4",
     "prettier": "^1.16.4",
