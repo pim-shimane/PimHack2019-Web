@@ -31,6 +31,8 @@ function splitCreditWithRecord(state, record, needCredit) {
   var i = 0;
   var free1 = 0;
   var free2 = 0;
+  // var social = 0;
+  // var science = 0;
   var educate = 0;
 
   //英語
