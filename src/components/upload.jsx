@@ -5,8 +5,7 @@ import Encoding from "encoding-japanese";
 import { splitCredit } from "../actions/creditAction.js";
 import { registerRecords } from "../actions/recordAction.js";
 
-class Upload extends Component {
-  parseCSV(text){
+export function parse(text){
     // 一行ごとに配列に分割
     const tmp = text.split("\n");
 
@@ -27,6 +26,13 @@ class Upload extends Component {
 
       records.push(record);
     }
+
+    return records;
+}
+
+class Upload extends Component {
+  parseCSV(text){
+    const records = parse(text);
     this.props.splitCredit(records, this.props.needCredit);
     this.props.registerRecords(records);
   }
