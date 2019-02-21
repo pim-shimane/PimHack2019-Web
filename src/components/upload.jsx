@@ -50,7 +50,6 @@ class UploadScreen extends Component {
   render() {
     return (
       <div>
-        <h5>Upload</h5>
         <input type="file" onChange={(e) => this.loadFile(e)} />
       </div>
     );

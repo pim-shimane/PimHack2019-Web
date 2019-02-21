@@ -1,16 +1,16 @@
 export default {
-  english: 4, //‰pŒê
-  foreignLanguage: 4, //‰C
-  artCulture: 2, //Œ|p•¶‰»
-  informationScience: 2, //î•ñ‰ÈŠw
-  social: 4, //l•¶Ğ‰ï‰ÈŠw
-  science: 4, //©‘R‰ÈŠw
-  educationOthers: 6, //‹³—{ˆç¬‚»‚Ì‘¼
-  freeFirst: 10, //©—R‘I‘ğ‡T
-  specialScienceCommon: 4, //©‘R‰ÈŠwŒnŠw•”‹¤’Ê‰È–Ú
-  specialFundamental: 12, //ê–åŠî‘b
-  specialCompulsory: 46, //ê–å•KC
-  specialOptional: 18, //ê–å‘I‘ğ
-  specialFree: 4, //ê–å©—R
-  freeSecond: 4 //©—R‘I‘ğ‡U
+  english: 4, //è‹±èª
+  foreignLanguage: 4, //åˆä¿®
+  artCulture: 2, //èŠ¸è¡“æ–‡åŒ–
+  informationScience: 2, //æƒ…å ±ç§‘å­¦
+  social: 4, //äººæ–‡ç¤¾ä¼šç§‘å­¦
+  science: 4, //è‡ªç„¶ç§‘å­¦
+  educationOthers: 6, //æ•™é¤Šè‚²æˆãã®ä»–
+  freeFirst: 10, //è‡ªç”±é¸æŠâ… 
+  specialScienceCommon: 4, //è‡ªç„¶ç§‘å­¦ç³»å­¦éƒ¨å…±é€šç§‘ç›®
+  specialFundamental: 12, //å°‚é–€åŸºç¤
+  specialCompulsory: 46, //å°‚é–€å¿…ä¿®
+  specialOptional: 18, //å°‚é–€é¸æŠ
+  specialFree: 4, //å°‚é–€è‡ªç”±
+  freeSecond: 4 //è‡ªç”±é¸æŠâ…¡
 };
