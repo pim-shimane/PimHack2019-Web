@@ -250,7 +250,6 @@ function splitCredit(state, records, needCredit) {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SPLIT_CREDIT: {
-      //後で変えて下さい。
       return splitCredit(state, action.records, action.needCredit);
     }
     default: {
