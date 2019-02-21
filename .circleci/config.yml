@@ -24,6 +24,8 @@ jobs:
       - restore_cache:
           key: npm-{{ checksum "package.json" }}
       - run: npm install
+      - run: git config user.name $GITHUB_NAME
+      - run: git config user.email $GITHUB_EMAIL
       - run: npm run build
       - run: npm run deploy
 workflows:

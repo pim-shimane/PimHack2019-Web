@@ -3,46 +3,50 @@ import { SPLIT_CREDIT } from "../actions/creditAction.js";
 const initialState = {
   isSelected: false, //アップロード & コース選択済み？
   english: 0, //英語
+  englishLesson: [],
   foreignLanguage: 0, //初修
+  foreignLanguageLesson: [],
   artCulture: 0, //芸術文化
+  artCultureLesson: [],
   informationScience: 0, //情報科学
-  socialElements: 0, //入門人文社会科学
-  scienceElements: 0, //入門自然科学
-  interdisciplinaryElements: 0, //入門学際
-  socialAdvance: 0, //発展人文社会科学
-  scienceAdvance: 0, //発展自然科学
-  interdisciplinaryAdvance: 0, //発展学際
-  //追加
+  informationScienceLesson: [],
   social: 0, //社会全般
+  socialLesson: [],
   science: 0, //自然全般
+  scienceLesson: [],
   educationOthers: 0, //教養その他
-  //ここまで
+  educationOthersLesson: [],
   socialTrain: 0, //社会人力養成
+  socialTrainLesson: [],
   freeFirst: 0, //自由選択Ⅰ
+  freeFirstLesson: [],
   specialFundamental: 0, //専門基礎
+  specialFundamentalLesson: [],
   specialCompulsory: 0, //専門必修
+  specialCompulsoryLesson: [],
   specialOptional: 0, //専門選択
+  specialOptionalLesson: [],
   specialFree: 0, //専門自由
+  specialFreeLesson: [],
   freeSecond: 0, //自由選択Ⅱ
-  surplusCredit: 0 //余剰単位
+  freeSecondLesson: [],
+  surplusCredit: 0, //余剰単位
+  surplusCreditLesson: []
 };
 
 function splitCreditWithRecord(state, record, needCredit) {
   var i = 0;
   var free1 = 0;
   var free2 = 0;
-  // var social = 0;
-  // var science = 0;
   var educate = 0;
 
   //英語
   if (record[2] === "英語") {
-    i = Number(state.english);
-    i += Number(record[4]);
-    state.english = String(i);
-    if (i > Number(needCredit.english)) {
+    state.english = state.english + Number(record[4]);
+    state.englishLesson.push(record[3]);
+    if (state.english > needCredit.english) {
       free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.english);
+      free1 += i - needCredit.english;
       state.english = needCredit.english;
       state.freeFirst = String(free1);
     }
@@ -50,10 +54,8 @@ function splitCreditWithRecord(state, record, needCredit) {
 
   //初修
   if (record[1] === "外国語科目" && record[2] !== "英語") {
-    i = Number(state.foreignLanguage);
-    i += Number(record[4]);
-    state.foreignLanguage = String(i);
-    if (i > Number(needCredit.foreignLanguage)) {
+    state.foreignLanguage = state.foreignLanguage + Number(record[4]);
+    if (state.foreignLanguage > needCredit.foreignLanguage) {
       free1 = Number(state.freeFirst);
       free1 += i - Number(needCredit.foreignLanguage);
       state.foreignLanguage = needCredit.foreignLanguage;
@@ -87,13 +89,10 @@ function splitCreditWithRecord(state, record, needCredit) {
     }
   }
 
-  //人文入門
-  if (record[1] === "入門科目" && record[2] === "人文社会科学") {
-    i = Number(state.socialElements) + Number(state.socialAdvance);
+  //人文社会科学
+  if (record[2] === "人文社会科学") {
+    i = Number(state.social);
     i += Number(record[4]);
-    state.socialElements = String(
-      Number(state.socialElements) + Number(record[4])
-    );
     state.social = String(i);
     if (i > Number(needCredit.social)) {
       educate = Number(state.educationOthers);
@@ -109,13 +108,10 @@ function splitCreditWithRecord(state, record, needCredit) {
     }
   }
 
-  //自然入門
-  if (record[1] === "入門科目" && record[2] === "自然科学") {
-    i = Number(state.scienceElements) + Number(state.scienceAdvance);
+  //自然科学
+  if (record[2] === "自然科学") {
+    i = Number(state.science);
     i += Number(record[4]);
-    state.scienceElements = String(
-      Number(state.scienceElements) + Number(record[4])
-    );
     state.science = String(i);
     if (i > Number(needCredit.science)) {
       educate = Number(state.educationOthers);
@@ -128,100 +124,6 @@ function splitCreditWithRecord(state, record, needCredit) {
         state.educationOthers = needCredit.educationOthers;
         state.freeFirst = String(free1);
       }
-    }
-  }
-
-  //学際入門
-  if (record[1] === "入門科目" && record[2] === "学際") {
-    i =
-      Number(state.interdisciplinaryElements) +
-      Number(state.interdisciplinaryAdvance);
-    i += Number(record[4]);
-    state.interdisciplinaryElements = String(
-      Number(state.interdisciplinaryElements) + Number(record[4])
-    );
-    state.educationOthers = String(i);
-    if (i > Number(needCredit.educationOthers)) {
-      free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.educationOthers);
-      state.educationOtherss = needCredit.educationOthers;
-      state.freeFirst = String(free1);
-    }
-  }
-
-  //人文発展
-  if (record[1] === "発展科目" && record[2] === "人文社会科学") {
-    i = Number(state.socialElements) + Number(state.socialAdvance);
-    i += Number(record[4]);
-    state.socialAdvance = String(
-      Number(state.socialAdvance) + Number(record[4])
-    );
-    state.social = String(i);
-    if (i > Number(needCredit.social)) {
-      educate = Number(state.educationOthers);
-      educate += i - Number(needCredit.social);
-      state.social = needCredit.social;
-      state.educationOthers = String(educate);
-      if (educate > Number(needCredit.educationOthers)) {
-        free1 = Number(state.freeFirst);
-        free1 += educate - Number(needCredit.educationOthers);
-        state.educationOthers = needCredit.educationOthers;
-        state.freeFirst = String(free1);
-      }
-    }
-  }
-
-  //自然発展
-  if (record[1] === "発展科目" && record[2] === "自然科学") {
-    i = Number(state.scienceElements) + Number(state.scienceAdvance);
-    i += Number(record[4]);
-    state.scienceAdvance = String(
-      Number(state.scienceAdvance) + Number(record[4])
-    );
-    state.science = String(i);
-    if (i > Number(needCredit.science)) {
-      educate = Number(state.educationOthers);
-      educate += i - Number(needCredit.science);
-      state.science = needCredit.science;
-      state.educationOthers = String(educate);
-      if (educate > Number(needCredit.educationOthers)) {
-        free1 = Number(state.freeFirst);
-        free1 += educate - Number(needCredit.educationOthers);
-        state.educationOthers = needCredit.educationOthers;
-        state.freeFirst = String(free1);
-      }
-    }
-  }
-
-  //学際発展
-  if (record[1] === "発展科目" && record[2] === "学際") {
-    i =
-      Number(state.interdisciplinaryElements) +
-      Number(state.interdisciplinaryAdvance);
-    i += Number(record[4]);
-    state.interdisciplinaryAdvance = String(
-      Number(state.interdisciplinaryAdvance) + Number(record[4])
-    );
-    state.educationOthers = String(i);
-    if (i > Number(needCredit.educationOthers)) {
-      free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.educationOthers);
-      state.educationOthers = needCredit.educationOthers;
-      state.freeFirst = String(free1);
-    }
-  }
-
-  //社会人力育成
-  if (record[1] === "社会人力養成科目") {
-    i = Number(state.socialTrain);
-    i += Number(record[4]);
-    state.socialTrain = String(Number(state.socialTrain) + Number(record[4]));
-    state.educationOthers = String(i);
-    if (i > Number(needCredit.educationOthers)) {
-      free1 = Number(state.freeFirst);
-      free1 += i - Number(needCredit.educationOthers);
-      state.educationOthers = needCredit.educationOthers;
-      state.freeFirst = String(free1);
     }
   }
 
@@ -245,6 +147,7 @@ function splitCredit(state, records, needCredit) {
       newState = splitCreditWithRecord(newState, record, needCredit);
     }
   }
+
   return newState;
 }
 
