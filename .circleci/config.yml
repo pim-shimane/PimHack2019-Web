@@ -23,7 +23,9 @@ jobs:
       - checkout
       - restore_cache:
           key: npm-{{ checksum "package.json" }}
-      - run: npm install
+      - add_ssh_keys:
+          fingerprints:
+            - 13:c0:de:b5:ab:89:c2:d0:4d:46:94:68:8f:16:75:3f
       - run: git config user.name $GITHUB_NAME
       - run: git config user.email $GITHUB_EMAIL
       - run: npm run build
