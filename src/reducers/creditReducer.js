@@ -147,7 +147,7 @@ function splitCredit(state, records, needCredit) {
       newState = splitCreditWithRecord(newState, record, needCredit);
     }
   }
-  console.log(newState);
+
   return newState;
 }
 
