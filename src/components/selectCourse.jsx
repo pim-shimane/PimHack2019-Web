@@ -18,7 +18,7 @@ class SelectCourse extends Component {
   // 学科コースの変更と成績の分割を行います
   SelectCourse(course, needCredit, expartRequired) {
     this.props.changeCourse(course, needCredit, expartRequired);
-    this.props.splitCredit(this.props.records, needCredit);
+    this.props.splitCredit(this.props.records, needCredit, expartRequired);
   }
 
   render() {
@@ -47,8 +47,8 @@ const mapDispatchToProps = (dispatch) => {
     changeCourse(course, needCredit, expartRequired){
       dispatch(changeCourse(course, needCredit, expartRequired));
     },
-    splitCredit(records, needCredit){
-      dispatch(splitCredit(records, needCredit));
+    splitCredit(records, needCredit, expartRequired){
+      dispatch(splitCredit(records, needCredit, expartRequired));
     },
   }
 }

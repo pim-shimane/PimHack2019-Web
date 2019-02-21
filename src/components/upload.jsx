@@ -33,7 +33,7 @@ export function parse(text){
 class Upload extends Component {
   parseCSV(text){
     const records = parse(text);
-    this.props.splitCredit(records, this.props.needCredit);
+    this.props.splitCredit(records, this.props.needCredit, this.props.expartRequired);
     this.props.registerRecords(records);
   }
 
@@ -68,7 +68,8 @@ class Upload extends Component {
 }
 
 const mapStateToProps = state => ({
-  needCredit: state.course.needCredit
+  needCredit: state.course.needCredit,
+  expartRequired: state.course.expartRequired
 });
 
 const mapDispatchToProps = (dispatch) => {
