@@ -43,9 +43,9 @@ class Sheet extends Component {
                     <td>{this.props.needcredit.foreignLanguage}</td>
                     <td>{this.props.needcredit.artCulture}</td>
                     <td>{this.props.needcredit.informationScience}</td>
-                    {/* <td>{socialElements}</td> */}
-                    {/* <td>{scienceElements}</td> */}
-                    {/* <td>{}</td> */}
+                    <td>{this.props.needcredit.social}</td>
+                    <td>{this.props.needcredit.science}</td>
+                    <td>{this.props.needcredit.educationOthers}</td>
                     <td>{this.props.needcredit.freeFirst}</td>
                     <td>{this.props.needcredit.specialFundamental}</td>
                     <td>{this.props.needcredit.specialCompulsory}</td>
@@ -62,9 +62,9 @@ class Sheet extends Component {
                     <td>{this.props.credit.foreignLanguage}</td>
                     <td>{this.props.credit.artCulture}</td>
                     <td>{this.props.credit.informationScience}</td>
-                    {/* <td>{this.props.credit.}</td> */}
-                    {/* <td>{this.props.credit.}</td> */}
-                    {/* <td>{this.props.credit.}</td> */}
+                    <td>{this.props.credit.social}</td>
+                    <td>{this.props.credit.science}</td>
+                    <td>{this.props.credit.educationOthers}</td>
                     <td>{this.props.needcredit.freeFirst}</td>
                     <td>{this.props.credit.specialFundamental}</td>
                     <td>{this.props.credit.specialCompulsory}</td>
