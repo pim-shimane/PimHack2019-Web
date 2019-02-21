@@ -8710,3 +8710,7 @@ form {
 .bottom-space {
   margin-bottom: 10rem;
 }
+
+.card {
+  margin-top: 2px;
+}
