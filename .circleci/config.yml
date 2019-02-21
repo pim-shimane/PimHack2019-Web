@@ -14,5 +14,8 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: 'Run Prettier'
-          command: 'npm run format -l'
+          name: Run format
+          command: npm run format -l
+      - run:
+          name: Run test
+          command: npm run test
