@@ -1,3 +1,5 @@
+export const informationSystem = "数理・情報システム学科（情報システムコース）";
+
 export default {
   english: 4, //英語
   foreignLanguage: 4, //初修

@@ -5,9 +5,9 @@ import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from
 import { changeCourse } from "../actions/courseAction.js";
 import { splitCredit } from "../actions/creditAction.js";
 
-import { informationSystem } from "../reducers/courseReducer.js";
-import { informationEngineering } from "../reducers/courseReducer.js";
-import { machineElectronics } from "../reducers/courseReducer.js";
+import { informationSystem } from "../courses/informationSystem.js";
+import { informationEngineering } from "../courses/informationEngineering.js";
+import { machineElectronics } from "../courses/machineElectronics.js";
 import informationSystemCredit from "../courses/informationSystem.js";
 import informationEngineeringCredit from "../courses/informationEngineering.js";
 import machineElectronicsCredit, { machineElectoronicsRequired } from "../courses/machineElectronics.js";

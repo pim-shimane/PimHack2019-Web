@@ -1,9 +1,7 @@
 import { CHANGE_COURSE } from "../actions/courseAction.js";
-
-const informationSystem = "数理・情報システム学科（情報システムコース）";
-const informationEngineering = "数理・情報システム学科（情報工学コース）";
-const inteligenceInformationDesign = "知能情報デザイン学科";
-const machineElectronics = "機械・電気電子工学科";
+import { informationSystem } from "../courses/informationSystem.js";
+import { informationEngineering } from "../courses/informationEngineering.js";
+import { machineElectronics } from "../courses/machineElectronics.js";
 
 const initialState = {
   course: "学科選択",
@@ -30,6 +28,5 @@ export {
   reducer as default,
   informationSystem,
   informationEngineering,
-  inteligenceInformationDesign,
   machineElectronics
 };
