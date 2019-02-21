@@ -34,7 +34,7 @@ const initialState = {
   surplusCreditLesson: []
 };
 
-function splitCreditWithRecord(state, record, needCredit) {
+function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   var i = 0;
   var free1 = 0;
   var free2 = 0;
@@ -137,14 +137,19 @@ function splitCreditWithRecord(state, record, needCredit) {
   return state;
 }
 
-function splitCredit(state, records, needCredit) {
+function splitCredit(state, records, needCredit, expartRequired) {
   //コース選択していない場合、そのままstateを返します。
   if (needCredit === "" || records.length === 0) return state;
   let newState = initialState;
   newState.isSelected = true;
   for (const record of records) {
     if (record[8] === "合") {
-      newState = splitCreditWithRecord(newState, record, needCredit);
+      newState = splitCreditWithRecord(
+        newState,
+        record,
+        needCredit,
+        expartRequired
+      );
     }
   }
 
@@ -155,7 +160,12 @@ function splitCredit(state, records, needCredit) {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SPLIT_CREDIT: {
-      return splitCredit(state, action.records, action.needCredit);
+      return splitCredit(
+        state,
+        action.records,
+        action.needCredit,
+        action.expartRequired
+      );
     }
     default: {
       return state;
