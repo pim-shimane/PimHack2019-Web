@@ -7,7 +7,8 @@ const machineElectronics = "機械・電気電子工学科";
 
 const initialState = {
   course: "学科選択",
-  needCredit: ""
+  needCredit: "",
+  expartRequired: []
 };
 // Reducer処理
 const reducer = (state = initialState, action) => {
@@ -15,7 +16,8 @@ const reducer = (state = initialState, action) => {
     case CHANGE_COURSE: {
       return {
         course: action.course,
-        needCredit: action.needCredit
+        needCredit: action.needCredit,
+        expartRequired: action.expartRequired
       };
     }
     default: {
