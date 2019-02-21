@@ -34,23 +34,52 @@ const initialState = {
   surplusCreditLesson: []
 };
 
+// 自由単位を管理します。
+function addFree(state, record, needCredit) {
+  if (state.freeFirst + Number(record[4]) <= needCredit.freeFirst) {
+    state.freeFirst += Number(record[4]);
+    state.freeFirstLesson.push(record[3]);
+  } else {
+    state = addFreeSecondOrSurplus(state, record, needCredit);
+  }
+
+  return state;
+}
+
+// 自由単位Ⅱもしくは余剰単位に分割します。
+function addFreeSecondOrSurplus(state, record, needCredit) {
+  if (state.freeSecond + Number(record[4]) <= needCredit.freeSecond) {
+    state.freeSecond += Number(record[4]);
+    state.freeSecondLesson.push(record[3]);
+  } else {
+    state.surplusCredit += Number(record[4]);
+    state.surplusCreditLesson.push(record[3]);
+  }
+
+  return state;
+}
+
 function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   //英語
+
   if (record[2] === "英語") {
     if (state.english + Number(record[4]) <= needCredit.english) {
       state.english += Number(record[4]);
       state.englishLesson.push(record[3]);
+    } else {
+      state = addFree(state, record, needCredit);
     }
   }
 
   //初修
   if (record[1] === "外国語科目" && record[2] !== "英語") {
     if (
-      state.foreignLanguage + Number(record[4]) <=
-      needCredit.foreignLanguage
+      state.foreignLanguage + Number(record[4] <= needCredit.foreignLanguage)
     ) {
       state.foreignLanguage += Number(record[4]);
       state.foreignLanguageLesson.push(record[3]);
+    } else {
+      state = addFree(state, record, needCredit);
     }
   }
 
@@ -85,7 +114,7 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   if (record[2] === "自然科学") {
     if (state.science + Number(record[4]) <= needCredit.science) {
       state.science += Number(record[4]);
-      state.sciencLesson.push(record[3]);
+      state.scienceLesson.push(record[3]);
     }
   }
 
@@ -108,6 +137,7 @@ function splitCredit(state, records, needCredit, expartRequired) {
     }
   }
 
+  console.log(newState);
   return newState;
 }
 
