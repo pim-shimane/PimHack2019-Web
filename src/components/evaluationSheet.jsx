@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { MDBBtn, MDBCollapse, MDBContainer, MDBCard, MDBCardBody, MDBIcon, MDBListGroup, MDBListGroupItem} from "mdbreact";
+import { MDBCollapse, MDBContainer, MDBCard, MDBIcon, MDBListGroup, MDBListGroupItem} from "mdbreact";
 
 
 class Sheet extends Component {
@@ -71,16 +71,16 @@ class Sheet extends Component {
                     <tr>
                       <th>取得</th>
                       <td>
-                        <a color="primary" onClick={this.toggleCollapse("basicCollapse")} style={{ marginBottom: "1rem" }}>
+                        <div className="click-button" color="primary" onClick={this.toggleCollapse("englich")} style={{ marginBottom: "1rem" }}>
                           {this.props.credit.english}
                           <MDBIcon icon="caret-down"/>
-                        </a>
+                        </div>
                       </td>
                       <td>
-                        <a color="primary" onClick={this.toggleCollapse("basicCollapse")} style={{ marginBottom: "1rem" }}>
+                        <div className="click-button" color="primary" onClick={this.toggleCollapse("basicCollapse")} style={{ marginBottom: "1rem" }}>
                           {this.props.credit.foreignLanguage}
                           <MDBIcon icon="caret-down"/>
-                        </a>
+                        </div>
                       </td>
                       <td>{this.props.credit.artCulture}</td>
                       <td>{this.props.credit.informationScience}</td>
@@ -97,12 +97,11 @@ class Sheet extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
+                <MDBCollapse id="englich" isOpen={this.state.collapseID}>
                   <MDBContainer>
                     <MDBCard>
                       <MDBListGroup>
-                        <MDBListGroupItem>hoge</MDBListGroupItem>
-                        <MDBListGroupItem>hoge</MDBListGroupItem>
+                        <MDBListGroupItem className="details-style">hoge</MDBListGroupItem>
                       </MDBListGroup>
                     </MDBCard>
                   </MDBContainer>
@@ -115,12 +114,6 @@ class Sheet extends Component {
     );
   }
 }
-
-class CollapsePage extends Component {
-
-}
-
-// export default Sheet;
 
 const mapStateToProps = state => ({
   credit: state.credit,

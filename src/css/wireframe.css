@@ -8714,3 +8714,21 @@ form {
 .card {
   margin-top: 2px;
 }
+
+.click-button {
+  text-align: center;
+  padding: 0 0.3em;
+  transition: all 0.3s;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.click-button:hover {
+  color: #fff;
+  background-color: #2ecc71;
+}
+
+.details-style {
+  color: #000;
+}
