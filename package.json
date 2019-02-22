@@ -2,7 +2,7 @@
   "name": "check-credit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pim-shimane.github.io/PimHack2019-Web/",
+  "homepage": "https://pim-shimane.github.io/PimHack2019-Web",
   "dependencies": {
     "encoding-japanese": "^1.0.29",
     "mdbreact": "^4.11.0",
