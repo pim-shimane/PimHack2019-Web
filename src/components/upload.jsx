@@ -74,8 +74,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    splitCredit(records, needCredit){
-      dispatch(splitCredit(records, needCredit));
+    splitCredit(records, needCredit, expartRequired){
+      dispatch(splitCredit(records, needCredit, expartRequired));
     },
     registerRecords(records){
       dispatch(registerRecords(records));
