@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { MDBCollapse, MDBContainer, MDBCard, MDBIcon, MDBListGroup, MDBListGroupItem} from "mdbreact";
-
+import {
+  MDBCollapse,
+  MDBContainer,
+  MDBCard,
+  MDBIcon,
+  MDBListGroup,
+  MDBListGroupItem
+} from "mdbreact";
 
 class Sheet extends Component {
   state = {
     collapseID: ""
-  }
+  };
 
   toggleCollapse = collapseID => () => {
     this.setState(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
-  }
+  };
 
   render() {
     return (
@@ -30,8 +36,8 @@ class Sheet extends Component {
               <div className="mx-auto">
                 <table>
                   <thead>
-                    <tr>
-                      <th></th>
+                    <tr className="table-title">
+                      <th />
                       <th>英語</th>
                       <th>初修</th>
                       <th>健康・スポーツ/文化・芸術</th>
@@ -49,7 +55,7 @@ class Sheet extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr className="required-unit">
                       <th>必要</th>
                       <td>{this.props.needcredit.english}</td>
                       <td>{this.props.needcredit.foreignLanguage}</td>
@@ -68,18 +74,28 @@ class Sheet extends Component {
                     </tr>
                   </tbody>
                   <tbody>
-                    <tr>
+                    <tr className="acquisition-unit">
                       <th>取得</th>
                       <td>
-                        <div className="click-button" color="primary" onClick={this.toggleCollapse("englich")} style={{ marginBottom: "1rem" }}>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("english")}
+                          style={{ marginBottom: "1rem" }}
+                        >
                           {this.props.credit.english}
-                          <MDBIcon icon="caret-down"/>
+                          <MDBIcon icon="caret-down" />
                         </div>
                       </td>
                       <td>
-                        <div className="click-button" color="primary" onClick={this.toggleCollapse("basicCollapse")} style={{ marginBottom: "1rem" }}>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("basicCollapse")}
+                          style={{ marginBottom: "1rem" }}
+                        >
                           {this.props.credit.foreignLanguage}
-                          <MDBIcon icon="caret-down"/>
+                          <MDBIcon icon="caret-down" />
                         </div>
                       </td>
                       <td>{this.props.credit.artCulture}</td>
@@ -97,15 +113,18 @@ class Sheet extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <MDBCollapse id="englich" isOpen={this.state.collapseID}>
+                {/* -----english----- */}
+                <MDBCollapse id="english" isOpen={this.state.collapseID}>
                   <MDBContainer>
                     <MDBCard>
                       <MDBListGroup>
-                        <MDBListGroupItem className="details-style">hoge</MDBListGroupItem>
+                        <MDBListGroupItem className="details-style">
+                          hoge
+                        </MDBListGroupItem>
                       </MDBListGroup>
                     </MDBCard>
                   </MDBContainer>
-              </MDBCollapse>
+                </MDBCollapse>
               </div>
             </div>
           </div>
@@ -121,4 +140,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Sheet);
-
