@@ -8679,14 +8679,18 @@ table tr,
 table th,
 table td {
   border: solid;
+  border-color: #fff;
 }
 
-table tr:nth-child(1) {
+.table-title {
   background-color: #ffcc99;
+  color: #222;
 }
-table tr:nth-child(2),
-table tr:nth-child(3) {
-  background-color: #fffff2;
+
+.required-unit,
+.acquisition-unit {
+  background-color: #f5d0a9;
+  color: #222;
 }
 
 form {
