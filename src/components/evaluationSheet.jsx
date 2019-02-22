@@ -449,6 +449,22 @@ class Sheet extends Component {
                     </MDBCard>
                   </MDBContainer>
                 </MDBCollapse>
+                {/* -----surplusCredit----- */}
+                <MDBCollapse id="surplusCredit" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.surplusCreditLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
               </div>
             </div>
           </div>
