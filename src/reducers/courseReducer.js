@@ -1,7 +1,4 @@
 import { CHANGE_COURSE } from "../actions/courseAction.js";
-import { informationSystem } from "../courses/informationSystem.js";
-import { informationEngineering } from "../courses/informationEngineering.js";
-import { machineElectronics } from "../courses/machineElectronics.js";
 
 const initialState = {
   course: "学科選択",
@@ -24,9 +21,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export {
-  reducer as default,
-  informationSystem,
-  informationEngineering,
-  machineElectronics
-};
+export default reducer;
