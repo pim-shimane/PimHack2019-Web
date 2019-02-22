@@ -1,6 +1,11 @@
 import { testHook } from "react-testing-library";
 import { isMainThread } from "worker_threads";
 import { splitCredit, initialState } from "../../reducers/creditReducer.js";
+//import informationEngineering from "../../cources/informationEngineering.js";
+//import informationSystems from "../cources/informationSystems.js";
+//import machineElectronics from "../cources/machineElectronics.js";
+//import mathematics from "../cources/mathematics.js";
+const informationEngineering = "数理・情報システム学科（情報工学コース）";
 
 describe("splitCredit()", () => {
   it("splitCredit test 1", () => {
@@ -35,36 +40,39 @@ describe("splitCredit()", () => {
           specialFundamental: 12,
           specialOptional: 8
         },
-        [
-          "情報数学Ｉａ",
-          "情報数学Ｉｂ",
-          "情報数学III",
-          "コンピュータセキュリティ",
-          "記号論理学",
-          "データベースの設計と開発",
-          "アルゴリズムとデータ構造",
-          "計算機アーキテクチャI",
-          "計算機アーキテクチャII",
-          "オペレーティングシステム",
-          "コンピュータネットワーク",
-          "プログラミング言語と処理系",
-          "ソフトウェア工学",
-          "コンピュータサイエンス基礎",
-          "情報と産業・社会",
-          "情報システムと職業倫理",
-          "Ｃプログラミング応用演習",
-          "ＪＡＶＡプログラミング演習",
-          "計算機工学実験Ａ",
-          "計算機工学実験Ｂ",
-          "基礎データ構造演習",
-          "システム創成プロジェクトI",
-          "システム創成プロジェクトII",
-          "システム創成プロジェクトIII",
-          "コンピュータサイエンス講究",
-          "コンピュータサイエンス研究実習",
-          "情報処理演習",
-          "卒業研究"
-        ]
+        {
+          required: [
+            "情報数学Ｉａ",
+            "情報数学Ｉｂ",
+            "情報数学III",
+            "コンピュータセキュリティ",
+            "記号論理学",
+            "データベースの設計と開発",
+            "アルゴリズムとデータ構造",
+            "計算機アーキテクチャI",
+            "計算機アーキテクチャII",
+            "オペレーティングシステム",
+            "コンピュータネットワーク",
+            "プログラミング言語と処理系",
+            "ソフトウェア工学",
+            "コンピュータサイエンス基礎",
+            "情報と産業・社会",
+            "情報システムと職業倫理",
+            "Ｃプログラミング応用演習",
+            "ＪＡＶＡプログラミング演習",
+            "計算機工学実験Ａ",
+            "計算機工学実験Ｂ",
+            "基礎データ構造演習",
+            "システム創成プロジェクトI",
+            "システム創成プロジェクトII",
+            "システム創成プロジェクトIII",
+            "コンピュータサイエンス講究",
+            "コンピュータサイエンス研究実習",
+            "情報処理演習",
+            "卒業研究"
+          ]
+        },
+        informationEngineering
       )
     ).toEqual({
       artCulture: 0,
@@ -699,7 +707,8 @@ describe("splitCredit()", () => {
           "コンピュータサイエンス研究実習",
           "情報処理演習",
           "卒業研究"
-        ]
+        ],
+        informationEngineering
       )
     ).toEqual({
       artCulture: 2,
@@ -776,4 +785,129 @@ describe("splitCredit()", () => {
     });
   });
   */
+
+  it("splitCredit test 3 (システムコース・システム創成取得済）", () => {
+    expect(
+      splitCredit(
+        initialState,
+        [
+          [
+            "専門教育科目",
+            "数理・情報システム学科開講科目",
+            "---",
+            "システム創成プロジェクトI",
+            "2",
+            "2018",
+            "前期",
+            "秀",
+            "合"
+          ],
+          [
+            "専門教育科目",
+            "数理・情報システム学科開講科目",
+            "---",
+            "システム創成プロジェクトII",
+            "2",
+            "2018",
+            "前期",
+            "秀",
+            "合"
+          ],
+          [
+            "専門教育科目",
+            "数理・情報システム学科開講科目",
+            "---",
+            "システム創成プロジェクトIII",
+            "2",
+            "2018",
+            "前期",
+            "秀",
+            "合"
+          ]
+        ],
+        {
+          artCulture: 2,
+          educationOthers: 6,
+          english: 4,
+          foreignLanguage: 4,
+          freeFirst: 10,
+          freeSecond: 6,
+          informationScience: 2,
+          science: 4,
+          social: 4,
+          specialCompulsory: 62,
+          specialFree: 0,
+          specialFundamental: 12,
+          specialOptional: 8
+        },
+        {
+          required: [
+            "情報数学Ｉａ",
+            "情報数学Ｉｂ",
+            "情報数学III",
+            "コンピュータセキュリティ",
+            "記号論理学",
+            "データベースの設計と開発",
+            "アルゴリズムとデータ構造",
+            "計算機アーキテクチャI",
+            "計算機アーキテクチャII",
+            "オペレーティングシステム",
+            "コンピュータネットワーク",
+            "プログラミング言語と処理系",
+            "ソフトウェア工学",
+            "コンピュータサイエンス基礎",
+            "情報と産業・社会",
+            "情報システムと職業倫理",
+            "Ｃプログラミング応用演習",
+            "ＪＡＶＡプログラミング演習",
+            "計算機工学実験Ａ",
+            "計算機工学実験Ｂ",
+            "基礎データ構造演習",
+            "システム創成プロジェクトI",
+            "システム創成プロジェクトII",
+            "システム創成プロジェクトIII",
+            "コンピュータサイエンス講究",
+            "コンピュータサイエンス研究実習",
+            "情報処理演習",
+            "卒業研究"
+          ]
+        },
+        informationEngineering
+      )
+    ).toEqual({
+      artCulture: 0,
+      artCultureLesson: [],
+      educationOthers: 0,
+      educationOthersLesson: [],
+      english: 0,
+      englishLesson: [],
+      foreignLanguage: 0,
+      foreignLanguageLesson: [],
+      freeFirst: 0,
+      freeFirstLesson: [],
+      freeSecond: 0,
+      freeSecondLesson: [],
+      informationScience: 0,
+      informationScienceLesson: [],
+      isSelected: true,
+      science: 0,
+      scienceLesson: [],
+      social: 0,
+      socialLesson: [],
+      specialCompulsory: 6,
+      specialCompulsoryLesson: [
+        "システム創成プロジェクトI",
+        "システム創成プロジェクトII",
+        "システム創成プロジェクトIII"
+      ],
+      specialFree: 0,
+      specialFreeLesson: [],
+      specialFundamental: 0,
+      specialFundamentalLesson: [],
+      specialOptional: 0,
+      specialOptionalLesson: [],
+      surplusCredit: 0,
+      surplusCreditLesson: []
+    });
+  });
 });
