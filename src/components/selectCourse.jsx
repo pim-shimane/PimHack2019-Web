@@ -10,7 +10,7 @@ import { informationEngineering } from "../courses/informationEngineering.js";
 import { machineElectronics } from "../courses/machineElectronics.js";
 import informationSystemCredit from "../courses/informationSystem.js";
 import informationEngineeringCredit from "../courses/informationEngineering.js";
-import machineElectronicsCredit, { machineElectoronicsRequired } from "../courses/machineElectronics.js";
+import machineElectronicsCredit, { machineElectoronicsRequired_A } from "../courses/machineElectronics.js";
 import { informationEngineeringRequired } from "../courses/informationEngineering.js";
 import { informationSystemRequired } from "../courses/informationSystem.js";
 
@@ -30,7 +30,7 @@ class SelectCourse extends Component {
         <MDBDropdownMenu basic>
           <MDBDropdownItem onClick={() => this.SelectCourse(informationSystem, informationSystemCredit, informationSystemRequired)}>{informationSystem}</MDBDropdownItem>
           <MDBDropdownItem onClick={() => this.SelectCourse(informationEngineering, informationEngineeringCredit, informationEngineeringRequired)}>{informationEngineering}</MDBDropdownItem>
-          <MDBDropdownItem onClick={() => this.SelectCourse(machineElectronics, machineElectronicsCredit, machineElectoronicsRequired)}>{machineElectronics}</MDBDropdownItem>
+          <MDBDropdownItem onClick={() => this.SelectCourse(machineElectronics, machineElectronicsCredit, machineElectoronicsRequired_A)}>{machineElectronics}</MDBDropdownItem>
        </MDBDropdownMenu>
       </MDBDropdown>
     );
