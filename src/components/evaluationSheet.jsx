@@ -81,7 +81,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("english")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.english}
                           <MDBIcon icon="caret-down" />
@@ -92,7 +91,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("foreignLanguage")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.foreignLanguage}
                           <MDBIcon icon="caret-down" />
@@ -103,7 +101,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("artCulture")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.artCulture}
                           <MDBIcon icon="caret-down" />
@@ -114,7 +111,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("informationScience")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.informationScience}
                           <MDBIcon icon="caret-down" />
@@ -125,7 +121,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("social")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.social}
                           <MDBIcon icon="caret-down" />
@@ -136,7 +131,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("science")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.science}
                           <MDBIcon icon="caret-down" />
@@ -147,7 +141,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("freeSecond")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.educationOthers}
                           <MDBIcon icon="caret-down" />
@@ -158,7 +151,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("freeFirst")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.needcredit.freeFirst}
                           <MDBIcon icon="caret-down" />
@@ -169,7 +161,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("specialFundamental")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.specialFundamental}
                           <MDBIcon icon="caret-down" />
@@ -180,7 +171,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("specialCompulsory")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.specialCompulsory}
                           <MDBIcon icon="caret-down" />
@@ -191,7 +181,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("specialOptional")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.specialOptional}
                           <MDBIcon icon="caret-down" />
@@ -202,7 +191,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("specialFree")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.specialFree}
                           <MDBIcon icon="caret-down" />
@@ -213,7 +201,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("freeSecond")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.freeSecond}
                           <MDBIcon icon="caret-down" />
@@ -224,7 +211,6 @@ class Sheet extends Component {
                           className="click-button"
                           color="primary"
                           onClick={this.toggleCollapse("surplusCredit")}
-                          style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.surplusCredit}
                           <MDBIcon icon="caret-down" />
