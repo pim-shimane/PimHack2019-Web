@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/PimHack2019-Web/precache-manifest.7e33a26992eef890992632a0d8c5bd7d.js"
+  "/PimHack2019-Web/precache-manifest.6d960a5ad7e3f6be6a09f3c21065a2cd.js"
 );
 
 workbox.clientsClaim();
