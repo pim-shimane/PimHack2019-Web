@@ -8693,6 +8693,10 @@ table td {
   color: #222;
 }
 
+.acquisition-unit {
+  vertical-align: middle;
+}
+
 form {
   position: absolute;
   left: 89px;
@@ -8720,12 +8724,9 @@ form {
 }
 
 .click-button {
-  text-align: center;
   padding: 0 0.3em;
   transition: all 0.3s;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  margin: 0;
 }
 
 .click-button:hover {
@@ -8735,4 +8736,5 @@ form {
 
 .details-style {
   color: #000;
+  text-align: center;
 }
