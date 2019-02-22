@@ -6,6 +6,8 @@ import {
   MDBModalBody,
   MDBModalHeader
 } from "mdbreact";
+import Logo from "../images/pimlogo.png";
+import Walkthrough from "../images/gakumu.gif";
 
 function Header() {
   const [modal, toggle] = React.useState(false);
@@ -14,7 +16,7 @@ function Header() {
     <nav className="navbar navbar-expand-md navbar-dark bg-light mb-3">
       <div className="container">
         <a href="https://pim-shimane.com/">
-          <img src="/images/pimlogo.png" height="40px" alt="" />
+          <img src={Logo} height="40px" alt="" />
         </a>
         <MDBContainer
           style={{ color: "black", width: "250px", margin: 0, padding: 0 }}
@@ -32,7 +34,7 @@ function Header() {
               単位情報のダウンロード手順
             </MDBModalHeader>
             <MDBModalBody>
-              <img src="/images/gakumu.gif" width="100%" alt="" />
+              <img src={Walkthrough} width="100%" alt="" />
             </MDBModalBody>
             <div>
               <ol>
