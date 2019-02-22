@@ -1,23 +1,31 @@
 self.__precacheManifest = [
   {
-    "revision": "63192e695f0a37f6811a",
-    "url": "/PimHack2019-Web/static/css/main.46763a58.chunk.css"
+    "revision": "5dfd65c6ac89b75b3083",
+    "url": "/PimHack2019-Web/static/css/main.1e623f49.chunk.css"
   },
   {
-    "revision": "63192e695f0a37f6811a",
-    "url": "/PimHack2019-Web/static/js/main.63192e69.chunk.js"
+    "revision": "5dfd65c6ac89b75b3083",
+    "url": "/PimHack2019-Web/static/js/main.5dfd65c6.chunk.js"
   },
   {
     "revision": "d5702e2da569b572bf13",
     "url": "/PimHack2019-Web/static/js/runtime~main.d5702e2d.js"
   },
   {
-    "revision": "bc46b6e3a7660004bf9c",
-    "url": "/PimHack2019-Web/static/css/2.7e485b40.chunk.css"
+    "revision": "64fd4253559f7a426737",
+    "url": "/PimHack2019-Web/static/css/2.2cec1ee3.chunk.css"
   },
   {
-    "revision": "bc46b6e3a7660004bf9c",
-    "url": "/PimHack2019-Web/static/js/2.bc46b6e3.chunk.js"
+    "revision": "64fd4253559f7a426737",
+    "url": "/PimHack2019-Web/static/js/2.64fd4253.chunk.js"
+  },
+  {
+    "revision": "382f29385f34b770ab8da6014bdc6d3a",
+    "url": "/PimHack2019-Web/static/media/pimlogo.382f2938.png"
+  },
+  {
+    "revision": "ed7bb3e1a8b48a6ad1b8d56964500d2d",
+    "url": "/PimHack2019-Web/static/media/gakumu.ed7bb3e1.gif"
   },
   {
     "revision": "65779ebcc35604a25c2ba77309c5b8af",
@@ -52,12 +60,12 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/fa-solid-900.61969d43.woff"
   },
   {
-    "revision": "c39278f7abfc798a241551194f55e29f",
-    "url": "/PimHack2019-Web/static/media/fa-brands-400.c39278f7.ttf"
-  },
-  {
     "revision": "d9d17590c975aad1be0ddab673f9c769",
     "url": "/PimHack2019-Web/static/media/fa-brands-400.d9d17590.eot"
+  },
+  {
+    "revision": "c39278f7abfc798a241551194f55e29f",
+    "url": "/PimHack2019-Web/static/media/fa-brands-400.c39278f7.ttf"
   },
   {
     "revision": "e7e957c87c454bccaa3bf9fdaa6874f8",
@@ -80,12 +88,12 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/fa-solid-900.82905d8d.svg"
   },
   {
-    "revision": "11911410dca2de148f30954eb2fd5eab",
-    "url": "/PimHack2019-Web/static/media/arrow_left.11911410.svg"
-  },
-  {
     "revision": "8ef6a08cdc1154920165680a4edde771",
     "url": "/PimHack2019-Web/static/media/arrow_right.8ef6a08c.svg"
+  },
+  {
+    "revision": "11911410dca2de148f30954eb2fd5eab",
+    "url": "/PimHack2019-Web/static/media/arrow_left.11911410.svg"
   },
   {
     "revision": "dfe56a876d0282555d1e2458e278060f",
@@ -156,19 +164,19 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/Roboto-Light.46e48ce0.ttf"
   },
   {
-    "revision": "df7b648ce5356ea1ebce435b3459fd60",
-    "url": "/PimHack2019-Web/static/media/Roboto-Regular.df7b648c.ttf"
-  },
-  {
     "revision": "894a2ede85a483bf9bedefd4db45cdb9",
     "url": "/PimHack2019-Web/static/media/Roboto-Medium.894a2ede.ttf"
+  },
+  {
+    "revision": "df7b648ce5356ea1ebce435b3459fd60",
+    "url": "/PimHack2019-Web/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
     "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
     "url": "/PimHack2019-Web/static/media/Roboto-Bold.e31fcf18.ttf"
   },
   {
-    "revision": "61301a3598a06dc58f7badd3ffaf7b79",
+    "revision": "942d70d6dfd6915b462a8f3e92629bfa",
     "url": "/PimHack2019-Web/index.html"
   }
 ];
