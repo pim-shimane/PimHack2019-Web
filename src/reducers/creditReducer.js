@@ -1,6 +1,6 @@
 import { SPLIT_CREDIT } from "../actions/creditAction.js";
 
-const initialState = {
+export const initialState = {
   isSelected: false, //アップロード & コース選択済み？
   english: 0, //英語
   englishLesson: [],
@@ -190,7 +190,7 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   return state;
 }
 
-function splitCredit(state, records, needCredit, expartRequired) {
+export function splitCredit(state, records, needCredit, expartRequired) {
   //コース選択していない場合、そのままstateを返します。
   if (needCredit === "" || records.length === 0) return state;
   let newState = initializeState();
