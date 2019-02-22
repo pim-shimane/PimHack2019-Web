@@ -3,7 +3,7 @@ import { CHANGE_COURSE } from "../actions/courseAction.js";
 const initialState = {
   course: "学科選択",
   needCredit: "",
-  expartRequired: []
+  expartSubject: []
 };
 // Reducer処理
 const reducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const reducer = (state = initialState, action) => {
       return {
         course: action.course,
         needCredit: action.needCredit,
-        expartRequired: action.expartRequired
+        expartSubject: action.expartSubject
       };
     }
     default: {
