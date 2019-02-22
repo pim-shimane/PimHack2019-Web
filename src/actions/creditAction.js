@@ -1,10 +1,11 @@
 export const SPLIT_CREDIT = "SPLIT_CREDIT";
 
-export function splitCredit(records, needCredit, expartRequired) {
+export function splitCredit(records, needCredit, expartSubject, course) {
   return {
     type: SPLIT_CREDIT,
     records: records,
     needCredit: needCredit,
-    expartRequired: expartRequired
+    expartSubject: expartSubject,
+    course: course
   };
 }
