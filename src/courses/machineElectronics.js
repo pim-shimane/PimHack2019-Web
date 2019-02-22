@@ -1,3 +1,5 @@
+export const machineElectronics = "機械・電気電子工学科";
+
 export default {
   english: 4, //英語
   foreignLanguage: 4, //初修
