@@ -91,25 +91,145 @@ class Sheet extends Component {
                         <div
                           className="click-button"
                           color="primary"
-                          onClick={this.toggleCollapse("basicCollapse")}
+                          onClick={this.toggleCollapse("foreignLanguage")}
                           style={{ marginBottom: "1rem" }}
                         >
                           {this.props.credit.foreignLanguage}
                           <MDBIcon icon="caret-down" />
                         </div>
                       </td>
-                      <td>{this.props.credit.artCulture}</td>
-                      <td>{this.props.credit.informationScience}</td>
-                      <td>{this.props.credit.social}</td>
-                      <td>{this.props.credit.science}</td>
-                      <td>{this.props.credit.educationOthers}</td>
-                      <td>{this.props.needcredit.freeFirst}</td>
-                      <td>{this.props.credit.specialFundamental}</td>
-                      <td>{this.props.credit.specialCompulsory}</td>
-                      <td>{this.props.credit.specialOptional}</td>
-                      <td>{this.props.credit.specialFree}</td>
-                      <td>{this.props.credit.freeSecond}</td>
-                      <td>{this.props.credit.surplusCredit}</td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("artCulture")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.artCulture}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("informationScience")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.informationScience}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("social")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.social}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("science")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.science}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("freeSecond")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.educationOthers}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("freeFirst")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.needcredit.freeFirst}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("specialFundamental")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.specialFundamental}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("specialCompulsory")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.specialCompulsory}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("specialOptional")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.specialOptional}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("specialFree")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.specialFree}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("freeSecond")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.freeSecond}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("surplusCredit")}
+                          style={{ marginBottom: "1rem" }}
+                        >
+                          {this.props.credit.surplusCredit}
+                          <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -118,9 +238,227 @@ class Sheet extends Component {
                   <MDBContainer>
                     <MDBCard>
                       <MDBListGroup>
-                        <MDBListGroupItem className="details-style">
-                          hoge
-                        </MDBListGroupItem>
+                        {this.props.credit.englishLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----foreignLanguage----- */}
+                <MDBCollapse
+                  id="foreignLanguage"
+                  isOpen={this.state.collapseID}
+                >
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.foreignLanguageLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----artCulture----- */}
+                <MDBCollapse id="artCulture" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.artCultureLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----informationScience----- */}
+                <MDBCollapse
+                  id="informationScience"
+                  isOpen={this.state.collapseID}
+                >
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.informationScienceLesson.map(
+                          data => {
+                            return (
+                              <MDBListGroupItem className="details-style">
+                                {data}
+                              </MDBListGroupItem>
+                            );
+                          }
+                        )}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----social----- */}
+                <MDBCollapse id="social" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.socialLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----science----- */}
+                <MDBCollapse id="science" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.scienceLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----educationOthers----- */}
+                <MDBCollapse
+                  id="educationOthers"
+                  isOpen={this.state.collapseID}
+                >
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.educationOthersLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----freeFirst----- */}
+                <MDBCollapse id="freeFirst" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.freeFirstLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----specialFundamental----- */}
+                <MDBCollapse
+                  id="specialFundamental"
+                  isOpen={this.state.collapseID}
+                >
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.specialFundamentalLesson.map(
+                          data => {
+                            return (
+                              <MDBListGroupItem className="details-style">
+                                {data}
+                              </MDBListGroupItem>
+                            );
+                          }
+                        )}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----specialCompulsory----- */}
+                <MDBCollapse
+                  id="specialCompulsory"
+                  isOpen={this.state.collapseID}
+                >
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.specialCompulsoryLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----specialOptional----- */}
+                <MDBCollapse
+                  id="specialOptional"
+                  isOpen={this.state.collapseID}
+                >
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.specialOptionalLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----specialFree----- */}
+                <MDBCollapse id="specialFree" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.specialFreeLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
+                      </MDBListGroup>
+                    </MDBCard>
+                  </MDBContainer>
+                </MDBCollapse>
+                {/* -----freeSecond----- */}
+                <MDBCollapse id="freeSecond" isOpen={this.state.collapseID}>
+                  <MDBContainer>
+                    <MDBCard>
+                      <MDBListGroup>
+                        {this.props.credit.freeSecondLesson.map(data => {
+                          return (
+                            <MDBListGroupItem className="details-style">
+                              {data}
+                            </MDBListGroupItem>
+                          );
+                        })}
                       </MDBListGroup>
                     </MDBCard>
                   </MDBContainer>
