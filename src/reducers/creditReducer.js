@@ -69,6 +69,41 @@ function addEducationOthers(state, record, needCredit) {
   return state;
 }
 
+// newStateを初期値を返します。
+function initializeState() {
+  return {
+    isSelected: false, //アップロード & コース選択済み？
+    english: 0, //英語
+    englishLesson: [],
+    foreignLanguage: 0, //初修
+    foreignLanguageLesson: [],
+    artCulture: 0, //芸術文化
+    artCultureLesson: [],
+    informationScience: 0, //情報科学
+    informationScienceLesson: [],
+    social: 0, //社会全般
+    socialLesson: [],
+    science: 0, //自然全般
+    scienceLesson: [],
+    educationOthers: 0, //教養その他
+    educationOthersLesson: [],
+    freeFirst: 0, //自由選択Ⅰ
+    freeFirstLesson: [],
+    specialFundamental: 0, //専門基礎
+    specialFundamentalLesson: [],
+    specialCompulsory: 0, //専門必修
+    specialCompulsoryLesson: [],
+    specialOptional: 0, //専門選択
+    specialOptionalLesson: [],
+    specialFree: 0, //専門自由
+    specialFreeLesson: [],
+    freeSecond: 0, //自由選択Ⅱ
+    freeSecondLesson: [],
+    surplusCredit: 0, //余剰単位
+    surplusCreditLesson: []
+  };
+}
+
 function splitCreditWithRecord(state, record, needCredit, expartRequired) {
   //英語
   if (record[2] === "英語") {
@@ -136,23 +171,21 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
     }
   }
 
-  if (record[0] === "専門教育科目") {
-    if (record[1] === "専門基礎科目") {
-      if (
-        state.specialFundamental + Number(record[4]) <=
-        needCredit.specialFundamental
-      ) {
-        state.specialFundamental += Number(record[4]);
-        state.specialFundamentalLesson.push(record[3]);
-      } else {
-        state = addFreeSecondOrSurplus(state, record, needCredit);
-      }
-    } else if (expartRequired.includes(record[3])) {
-      state.specialCompulsory += Number(record[4]);
-      state.specialCompulsoryLesson.push(record[3]);
+  if (record[1] === "専門基礎科目") {
+    if (
+      state.specialFundamental + Number(record[4]) <=
+      needCredit.specialFundamental
+    ) {
+      state.specialFundamental += Number(record[4]);
+      state.specialFundamentalLesson.push(record[3]);
+    } else {
+      state = addFreeSecondOrSurplus(state, record, needCredit);
     }
-    // TODO 専門選択と専門自由の分割
+  } else if (expartRequired.includes(record[3])) {
+    state.specialCompulsory += Number(record[4]);
+    state.specialCompulsoryLesson.push(record[3]);
   }
+  // ここに else if で 専門選択科目を分岐させる。
 
   return state;
 }
@@ -160,7 +193,7 @@ function splitCreditWithRecord(state, record, needCredit, expartRequired) {
 function splitCredit(state, records, needCredit, expartRequired) {
   //コース選択していない場合、そのままstateを返します。
   if (needCredit === "" || records.length === 0) return state;
-  let newState = initialState;
+  let newState = initializeState();
   newState.isSelected = true;
   for (const record of records) {
     if (record[8] === "合") {
