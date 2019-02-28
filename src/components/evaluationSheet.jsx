@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { animateScroll as scroll } from "react-scroll";
 import {
   MDBCollapse,
   MDBContainer,
@@ -23,6 +24,7 @@ class Sheet extends Component {
   render() {
     return (
       <div>
+        {this.props.credit.isSelected && scroll.scrollToBottom()}
         <div className="container done-space">
           <div className="row">
             <div className="col-md-12">
