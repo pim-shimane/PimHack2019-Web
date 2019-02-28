@@ -58,6 +58,7 @@ class Sheet extends Component {
                       <th>専門自由</th>
                       <th>自由選択２</th>
                       <th>余剰単位</th>
+                      <th>合計</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -77,6 +78,7 @@ class Sheet extends Component {
                       <td>{this.props.needCredit.specialFree}</td>
                       <td>{this.props.needCredit.freeSecond}</td>
                       <td>-</td>
+                      <td>{this.props.needCreditNumber}</td>
                     </tr>
                   </tbody>
                   <tbody>
@@ -220,6 +222,15 @@ class Sheet extends Component {
                         >
                           {this.props.credit.surplusCredit}
                           <MDBIcon icon="caret-down" />
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="click-button"
+                          color="primary"
+                          onClick={this.toggleCollapse("acquiredCredit")}
+                        >
+                          {this.props.credit.acquiredCredit}
                         </div>
                       </td>
                     </tr>
