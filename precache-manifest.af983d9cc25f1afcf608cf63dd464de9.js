@@ -72,12 +72,12 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/fa-regular-400.e7e957c8.svg"
   },
   {
-    "revision": "b5596f4d339f99e3d69bc41be78db962",
-    "url": "/PimHack2019-Web/static/media/fa-solid-900.b5596f4d.eot"
-  },
-  {
     "revision": "b70cea0339374107969eb53e5b1f603f",
     "url": "/PimHack2019-Web/static/media/fa-solid-900.b70cea03.ttf"
+  },
+  {
+    "revision": "b5596f4d339f99e3d69bc41be78db962",
+    "url": "/PimHack2019-Web/static/media/fa-solid-900.b5596f4d.eot"
   },
   {
     "revision": "80533988ff5fecd5be26557d08ce8237",
@@ -88,12 +88,12 @@ self.__precacheManifest = [
     "url": "/PimHack2019-Web/static/media/fa-solid-900.82905d8d.svg"
   },
   {
-    "revision": "8ef6a08cdc1154920165680a4edde771",
-    "url": "/PimHack2019-Web/static/media/arrow_right.8ef6a08c.svg"
-  },
-  {
     "revision": "11911410dca2de148f30954eb2fd5eab",
     "url": "/PimHack2019-Web/static/media/arrow_left.11911410.svg"
+  },
+  {
+    "revision": "8ef6a08cdc1154920165680a4edde771",
+    "url": "/PimHack2019-Web/static/media/arrow_right.8ef6a08c.svg"
   },
   {
     "revision": "dfe56a876d0282555d1e2458e278060f",
