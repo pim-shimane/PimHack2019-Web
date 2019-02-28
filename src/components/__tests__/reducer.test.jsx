@@ -103,7 +103,9 @@ describe("splitCredit()", () => {
       specialOptional: 0,
       specialOptionalLesson: [],
       surplusCredit: 0,
-      surplusCreditLesson: []
+      surplusCreditLesson: [],
+      needCredit: 124,
+      acquiredCredit: 2
     });
   });
   /*
@@ -907,7 +909,9 @@ describe("splitCredit()", () => {
       specialOptional: 0,
       specialOptionalLesson: [],
       surplusCredit: 0,
-      surplusCreditLesson: []
+      surplusCreditLesson: [],
+      needCredit: 124,
+      acquiredCredit: 6
     });
   });
 });
