@@ -28,8 +28,7 @@ class Sheet extends Component {
             <div className="col-md-12">
               <h1 className="display-3  text-center">
                 あと
-                {this.props.credit.needCredit -
-                  this.props.credit.acquiredCredit}
+                {this.props.needCreditNumber - this.props.credit.acquiredCredit}
                 単位足りません。
               </h1>
             </div>
@@ -481,7 +480,8 @@ class Sheet extends Component {
 
 const mapStateToProps = state => ({
   credit: state.credit,
-  needCredit: state.course.needCredit
+  needCredit: state.course.needCredit,
+  needCreditNumber: state.course.needCreditNumber
 });
 
 export default connect(mapStateToProps)(Sheet);

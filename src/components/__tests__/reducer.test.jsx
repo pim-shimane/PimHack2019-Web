@@ -104,7 +104,6 @@ describe("splitCredit()", () => {
       specialOptionalLesson: [],
       surplusCredit: 0,
       surplusCreditLesson: [],
-      needCredit: 124,
       acquiredCredit: 2
     });
   });
@@ -910,7 +909,6 @@ describe("splitCredit()", () => {
       specialOptionalLesson: [],
       surplusCredit: 0,
       surplusCreditLesson: [],
-      needCredit: 124,
       acquiredCredit: 6
     });
   });
