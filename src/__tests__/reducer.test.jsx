@@ -1,6 +1,4 @@
-import { testHook } from "react-testing-library";
-import { isMainThread } from "worker_threads";
-import { splitCredit, initialState } from "../../reducers/creditReducer.js";
+import { splitCredit, initialState } from "../reducers/creditReducer.js";
 //import informationEngineering from "../../cources/informationEngineering.js";
 //import informationSystems from "../cources/informationSystems.js";
 //import machineElectronics from "../cources/machineElectronics.js";
