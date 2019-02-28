@@ -10,6 +10,7 @@
     "react-dom": "^16.8.2",
     "react-redux": "^6.0.0",
     "react-scripts": "2.1.5",
+    "react-scroll": "^1.7.11",
     "redux": "^4.0.1"
   },
   "scripts": {
