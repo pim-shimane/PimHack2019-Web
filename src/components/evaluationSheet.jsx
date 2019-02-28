@@ -230,7 +230,8 @@ class Sheet extends Component {
                           color="primary"
                           onClick={this.toggleCollapse("acquiredCredit")}
                         >
-                          {this.props.credit.acquiredCredit}
+                          {this.props.credit.acquiredCredit +
+                            this.props.credit.surplusCredit}
                         </div>
                       </td>
                     </tr>
