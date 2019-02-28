@@ -103,7 +103,8 @@ describe("splitCredit()", () => {
       specialOptional: 0,
       specialOptionalLesson: [],
       surplusCredit: 0,
-      surplusCreditLesson: []
+      surplusCreditLesson: [],
+      acquiredCredit: 2
     });
   });
   /*
@@ -907,7 +908,8 @@ describe("splitCredit()", () => {
       specialOptional: 0,
       specialOptionalLesson: [],
       surplusCredit: 0,
-      surplusCreditLesson: []
+      surplusCreditLesson: [],
+      acquiredCredit: 6
     });
   });
 });

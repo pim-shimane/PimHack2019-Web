@@ -26,7 +26,11 @@ class Sheet extends Component {
         <div className="container done-space">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-3  text-center">あと？単位足りません。</h1>
+              <h1 className="display-3  text-center">
+                あと
+                {this.props.needCreditNumber - this.props.credit.acquiredCredit}
+                単位足りません。
+              </h1>
             </div>
           </div>
         </div>
@@ -57,19 +61,19 @@ class Sheet extends Component {
                   <tbody>
                     <tr className="required-unit">
                       <th>必要</th>
-                      <td>{this.props.needcredit.english}</td>
-                      <td>{this.props.needcredit.foreignLanguage}</td>
-                      <td>{this.props.needcredit.artCulture}</td>
-                      <td>{this.props.needcredit.informationScience}</td>
-                      <td>{this.props.needcredit.social}</td>
-                      <td>{this.props.needcredit.science}</td>
-                      <td>{this.props.needcredit.educationOthers}</td>
-                      <td>{this.props.needcredit.freeFirst}</td>
-                      <td>{this.props.needcredit.specialFundamental}</td>
-                      <td>{this.props.needcredit.specialCompulsory}</td>
-                      <td>{this.props.needcredit.specialOptional}</td>
-                      <td>{this.props.needcredit.specialFree}</td>
-                      <td>{this.props.needcredit.freeSecond}</td>
+                      <td>{this.props.needCredit.english}</td>
+                      <td>{this.props.needCredit.foreignLanguage}</td>
+                      <td>{this.props.needCredit.artCulture}</td>
+                      <td>{this.props.needCredit.informationScience}</td>
+                      <td>{this.props.needCredit.social}</td>
+                      <td>{this.props.needCredit.science}</td>
+                      <td>{this.props.needCredit.educationOthers}</td>
+                      <td>{this.props.needCredit.freeFirst}</td>
+                      <td>{this.props.needCredit.specialFundamental}</td>
+                      <td>{this.props.needCredit.specialCompulsory}</td>
+                      <td>{this.props.needCredit.specialOptional}</td>
+                      <td>{this.props.needCredit.specialFree}</td>
+                      <td>{this.props.needCredit.freeSecond}</td>
                       <td>-</td>
                     </tr>
                   </tbody>
@@ -152,7 +156,7 @@ class Sheet extends Component {
                           color="primary"
                           onClick={this.toggleCollapse("freeFirst")}
                         >
-                          {this.props.needcredit.freeFirst}
+                          {this.props.credit.freeFirst}
                           <MDBIcon icon="caret-down" />
                         </div>
                       </td>
@@ -476,7 +480,8 @@ class Sheet extends Component {
 
 const mapStateToProps = state => ({
   credit: state.credit,
-  needcredit: state.course.needCredit
+  needCredit: state.course.needCredit,
+  needCreditNumber: state.course.needCreditNumber
 });
 
 export default connect(mapStateToProps)(Sheet);
