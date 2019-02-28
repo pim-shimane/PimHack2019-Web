@@ -100,41 +100,6 @@ function isExceptionLesson(record, course) {
   }
 }
 
-// newStateを初期値を返します。
-function initializeState() {
-  return {
-    isSelected: false, //アップロード & コース選択済み？
-    english: 0, //英語
-    englishLesson: [],
-    foreignLanguage: 0, //初修
-    foreignLanguageLesson: [],
-    artCulture: 0, //芸術文化
-    artCultureLesson: [],
-    informationScience: 0, //情報科学
-    informationScienceLesson: [],
-    social: 0, //社会全般
-    socialLesson: [],
-    science: 0, //自然全般
-    scienceLesson: [],
-    educationOthers: 0, //教養その他
-    educationOthersLesson: [],
-    freeFirst: 0, //自由選択Ⅰ
-    freeFirstLesson: [],
-    specialFundamental: 0, //専門基礎
-    specialFundamentalLesson: [],
-    specialCompulsory: 0, //専門必修
-    specialCompulsoryLesson: [],
-    specialOptional: 0, //専門選択
-    specialOptionalLesson: [],
-    specialFree: 0, //専門自由
-    specialFreeLesson: [],
-    freeSecond: 0, //自由選択Ⅱ
-    freeSecondLesson: [],
-    surplusCredit: 0, //余剰単位
-    surplusCreditLesson: []
-  };
-}
-
 function splitCreditWithRecord(state, record, needCredit, expartSubject) {
   //英語
   if (record[2] === "英語") {
@@ -238,7 +203,7 @@ export function splitCredit(state, records, needCredit, expartSubject, course) {
     isExceptionLesson(records, course)
   )
     return state;
-  let newState = initializeState();
+  let newState = JSON.parse(JSON.stringify(initialState));
   newState.isSelected = true;
   for (const record of records) {
     if (record[8] === "合") {
