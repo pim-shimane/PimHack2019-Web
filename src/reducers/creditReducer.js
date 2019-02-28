@@ -31,7 +31,9 @@ export const initialState = {
   freeSecond: 0, //自由選択Ⅱ
   freeSecondLesson: [],
   surplusCredit: 0, //余剰単位
-  surplusCreditLesson: []
+  surplusCreditLesson: [],
+  needCredit: 0, //必要単位
+  acquiredCredit: 0 //取得済単位
 };
 
 // 自由単位を管理します。
@@ -249,7 +251,34 @@ export function splitCredit(state, records, needCredit, expartSubject, course) {
       );
     }
   }
-
+  newState.needCredit =
+    needCredit.english +
+    needCredit.foreignLanguage +
+    needCredit.artCulture +
+    needCredit.informationScience +
+    needCredit.social +
+    needCredit.science +
+    needCredit.educationOthers +
+    needCredit.freeFirst +
+    needCredit.specialFundamental +
+    needCredit.specialCompulsory +
+    needCredit.specialOptional +
+    needCredit.specialFree +
+    needCredit.freeSecond;
+  newState.acquiredCredit =
+    newState.english +
+    newState.foreignLanguage +
+    newState.artCulture +
+    newState.informationScience +
+    newState.social +
+    newState.science +
+    newState.educationOthers +
+    newState.freeFirst +
+    newState.specialFundamental +
+    newState.specialCompulsory +
+    newState.specialOptional +
+    newState.specialFree +
+    newState.freeSecond;
   return newState;
 }
 
